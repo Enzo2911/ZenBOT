@@ -35,6 +35,7 @@ module.exports = {
         message.channel.send(AlexaHelp
             .setThumbnail(Alexa.user.displayAvatarURL())
             .setColor('#0099ff')
+            .setURL('https://zencommunity.xyz/')
             .setTitle('Panel Help Discord & Forum Zen')
             .setFooter('Copyright @AlexaBot @2021')
         );
@@ -56,6 +57,7 @@ module.exports = {
             )
             .setImage('https://cdn.discordapp.com/attachments/804820404547354647/804850111921651732/ZenZen.png')
             .setTimestamp()
+            .setURL('https://zencommunity.xyz/')
             .setThumbnail(Alexa.user.displayAvatarURL())
             .setFooter('Use help with \"commande\" name for specific description... Copyright @AlexaBot @2021')
         )

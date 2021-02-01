@@ -43,7 +43,7 @@ Alexa.once('ready', () => {
     /* Activité de Alexa */
     Alexa.user.setActivity("zencommunity.xyz // @mentionmeforhelp", {
         type: "WATCHING",
-      })     
+    })     
 });
 
 Alexa.on('message', async message => {
@@ -59,7 +59,7 @@ Alexa.on('message', async message => {
     try {
         // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
         if (message.mentions.has(Alexa.user) && !message.content.includes("@everyone") && !message.content.includes("@here")) {
-            return message.reply('Pour connaitre mes commandes tapez \n**__'+ prefix + "AlexaHelp__**") 
+            return message.reply('Pour connaitre mes commandes tapez \n**__'+ prefix + "ZenHelp__**") 
         }
     } catch {
         // Si ont ne la pas mentionné sur le serveur ZenCommunity elle reste timide
