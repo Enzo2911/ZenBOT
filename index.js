@@ -1,8 +1,12 @@
 /* Module Discord */
 
 const Discord = require('discord.js');
-const Zen = new Discord.Client();
- 
+const Alexa = new Discord.Client();
+const { loadCommands } = require('./utils/loadexport.js');
+const Ascii = require('ascii-table');
+const Chalk = require('chalk');
+const fs = require("fs");
+
 /* END */
 
 /* LOGIN */
@@ -12,7 +16,7 @@ let config = require('./settings/config.json');
 if(!config.token) {
     console.error("Token pas inserer. !!");
 } else {
-    Zen.login(config.token).catch(error => { 
+    Alexa.login(config.token).catch(error => { 
        if (error.code == 'TOKEN_INVALID') {
             console.error("Invalide TOKEN");
        }
@@ -21,93 +25,63 @@ if(!config.token) {
 
 /* END */
 
+/* Categories */
+
+Alexa.commands = new Discord.Collection();
+Alexa.aliases = new Discord.Collection();
+Alexa.categories = fs.readdirSync("./commands/");
+
+/* END */
+
 /* Console LAUNCH */
 
-Zen.once('ready', () => {
-    console.log("Bot Lancé.");
-    Zen.user.setActivity("@JackRyan ProjectGuardiansV3SOONNN", {
-        type: "STREAMING",
-        url: "https://www.twitch.tv/Project/Guardians/V3SOON"
-      })
+Alexa.once('ready', () => {
+    /* Appel les commandes */
+    loadCommands(Alexa, Discord, Ascii, Chalk, Alexa.commands, Alexa.aliases); 
+    /* Logs ready console */
+    console.log("             Bot Lancé.");
+    /* Activité de Alexa */
+    Alexa.user.setActivity("zencommunity.xyz // @mentionmeforhelp", {
+        type: "WATCHING",
+      })     
 });
 
-Zen.on('message', message => {
+Alexa.on('message', async message => {
+    // Alexa est un peu fainéant elle reduit message.content en msg
     let msg = message.content;
-    let embed = new Discord.MessageEmbed();
+    // raccourcci du prefix du a une erreur dans mon load export (maniere de fixe) pour appele le prefix
+    let prefix = config.prefix;
+    // Alexa est un peu timide lorsqu'il faut discuté avec d'autre bot (H&F)
+    if (message.author.bot) return;
+    // Alexa aime pas lorsqu'ont parle en privé avec elle
+    if(message.channel.type == "dm") return;
 
-    if (message.mentions.has(Zen.user)) {
-        message.reply('Pour connaitre mes commandes tapez \n**__' + config.prefix + "ZenHelp__**") 
-    }
+    try {
+        // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
+        if (message.mentions.has(Alexa.user) && !message.content.includes("@everyone") && !message.content.includes("@here")) {
+            return message.reply('Pour connaitre mes commandes tapez \n**__'+ prefix + "AlexaHelp__**") 
+        }
+    } catch {
+        // Si ont ne la pas mentionné sur le serveur ZenCommunity elle reste timide
+        return;
+    };
 
-    if(msg.startsWith(config.prefix + "ZenHelp")) {
-        const ZenHelp = embed
-        .setColor('#0099ff')
-	    .setTitle('Panel Help Discord & Forum Zen')
-	    .setURL('https://zencommunity.xyz')
-	    .addFields(
-		    { name: config.prefix + ' + ZenPremium', value: 'Affice l\'URL du Site & QR Code.', inline: true},
-            { name: config.prefix + ' + ZenCoins', value: 'Explication sur le ZenCoins.', inline: true},
-            { name: '--------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
-		    { name: config.prefix + ' + ZenUpgrade', value: 'Affiche les différents grades du site + les avantages.', inline: true },
-            { name: config.prefix + ' + ZenPartenariat', value: 'Plus d\'info sur un Potentiel Partenariat.', inline: true },
-            { name: '----------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
-            { name: config.prefix + ' + ZenShoutbox', value: 'Les règles de la shoutbox du Forum.', inline: true },
-            { name: config.prefix + ' + ZenMarket', value: 'Les règles du Public Market du Forum.', inline: true },
-            { name: config.prefix + ' + ZenPost', value: '**Important** Explication du HIDDEN (Pour partagé sur le site).', inline: false },
-        )
-	    .setImage('https://cdn.discordapp.com/attachments/804820404547354647/804850111921651732/zenzen.png')
-	    .setTimestamp()
-	    .setFooter('Copyright @ZenBot @2021')
-        message.channel.send(ZenHelp)
-    }
 
-    if(msg.startsWith(config.prefix + "ZenPremium")) {
-        const ZenPremium = embed
-        .setAuthor("Notre Forum: ")
-        .setFooter('Copyright @ZenBot @2021')
-        .setImage('https://cdn.discordapp.com/attachments/804820404547354647/804829570544042004/qrcodeDiscordZen.png')
-        .setDescription('Rejoignez notre forum dès maintenant si cela n\'est pas fais \;\) [Click Here](https://zencommunity.xyz/) Or scan QR Code.') 
-        .setURL('https://zencommunity.xyz/')
-        message.channel.send(ZenPremium)
-    }
-
-    if(msg.startsWith(config.prefix + "ZenCoins")) {
-        message.channel.send (
-            "**__ZenCoins :__** \n``` Le ZenCoins est la monnaie virtuel du Forum. \nEn aucun cas cette monnaie peut etre cashout, elle vous sert uniquement sur le forum. \nAvec cet argent vous pourrez acheter des items dans la boutique, obtenir un grade et encore plus à venir !!!! \nPour obtenir du ZenCoins c'est simple : Postez, Répondez aux Posts, ou bien Invitez vos amis via votre lien dans votre Panel utilisateur !!! \nPour bloquer un topic avec des ZenCoins utilisez la commande suivante : ``` \n**[hide cost=\"1000\"] Votre contenu [/hide]** \n```1000 étant le prix que vous avez fixé. Le prix du ZenCoins évoluera surement dans les prochaines semaines .... \nPour toute achat de crédit sur le forum veuillez me MP d'abord.```"
-        )
-    }
-
-    if(msg.startsWith(config.prefix + "ZenUpgrade")) {
-        message.channel.send (
-            "**__Upgrade Account (deux type abo) :__** \n **Platinium - ** \n``` L'abonnement Platinium du forum est différent de celui que vous avez pu voir avant. \nCet abonnement débloque un accès exclusivement sur le forum. \nLes avantages : ByPass Hidden Content, Catégorie exclusive Platinium !!! Et plein d'autres !!``` \n __Prix :__ 24.99 € (LifeTime) \n\n **Ultimate - ** \n```L'abonnement Ultimate du forum est différent de celui que vous avez pu voir avant. \nCet abonnement débloque un accès exclusivement sur le forum. \nLes avantages : Augmentation radicale du nombre de thanks, Catégorie exclusive Ultimate !! et plein d'autres !! ``` \n __Prix :__ 50 € (LifeTime)" 
-        )
-    }
-
-    if(msg.startsWith(config.prefix + "ZenPartenariat")) {
-        message.channel.send (
-            "**__ZenCommunity est ouvert à toute proposition pour des partenariats. Pour toute demande s'adressé uniquement a Akyna."
-        )
-    }
-
-    if(msg.startsWith(config.prefix + "ZenShoutbox")) {
-        message.channel.send (
-            "**Les règles de la Shoutbox :** \n```Interdiction de spam, insulter, leak un dox, toutes formes de racisme sont prohibées. Tout non respect entrainera un bannissement de la shoutbox.```"
-        )
-    }
-
-    if(msg.startsWith(config.prefix + "ZenMarket")) {
-        const ZenMarket = embed
-        .setAuthor("Public Market: ")
-        .setFooter('Copyright @ZenBot @2021')
-        .setDescription("[Topic en Question](https://zencommunity.xyz/showthread.php?tid=11) \n```Sachant que nous ne sommes pas responsables en cas de scam par d'autres membres ici \nEn revanche nous pouvons faire office d'escrow. \nService escrow : 5% du prix total ( à partir de 100€) pour moins c'est 5€ ```") 
-        message.channel.send(ZenMarket)
-    }
-
-    if(msg.startsWith(config.prefix + "ZenPost")) {
-        message.channel.send (
-            "**__HIDDEN CONTENT__** : \n```La fonction Hidden Content (Thanks) vous permet de bloquer votre topic afin que les utilisateurs soient obligés de vous remercier pour voir le contenu.```\n**[hide] Votre Contenu [/hide]**"
-        )
-    }
+    // si la commande ne commence pas par le prefix definie.
+    if(!message.content.startsWith(prefix)) return;
+    // args = message commence par le prefix == nombre de caractère + enleve les espace et sépare en capturant ++
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    // enleve le prefix et transforme la commande écrite en minuscule.
+    const cmd = args.shift().toLowerCase();
+    // Alexa verifie que la commande n'est pas null
+    if (cmd.lenght === 0) return;
+    // Alexa recupere toute les commandes de sont dossier commands/ et les lances si il sont "appelé"
+    let command = Alexa.commands.get(cmd);
+    // si la commende ne fais pas partie des commandes principales elle va chercher la commande dans les alias
+    if (!command) command = Alexa.commands.get(Alexa.aliases.get(cmd));
+    // lance la commande une fois trouvé
+    if (command) command.run(Alexa, message, args, prefix);
 });
+
 
 /* END */
