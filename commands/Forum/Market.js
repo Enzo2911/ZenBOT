@@ -4,7 +4,7 @@ module.exports = {
     description: "Les règles du Public Market du Forum.",
     category: "Forum",
     usage: "[]",
-    run: async (message) => {
+    run: async (Alexa, message) => {
         const AlexaMarket = new Discord.MessageEmbed()
         .setAuthor("Public Market: ")
         .setFooter('Copyright @AlexaBot @2021')

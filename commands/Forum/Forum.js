@@ -6,7 +6,7 @@ module.exports = {
     category: "Forum",
     description: "Affice l\'URL du Site & QR Code.",
     usage: "[]",
-    run: async (message) => {
+    run: async (Alexa, message) => {
         const AlexaForum = new Discord.MessageEmbed();
         message.channel.send(AlexaForum
         .setAuthor("Notre Forum: ")
