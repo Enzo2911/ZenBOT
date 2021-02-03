@@ -1,5 +1,5 @@
 module.exports = {
-    aliases: ["zp"],
+    aliases: ["zpost"],
     name: "zenpost",
     category: "Forum",
     description: "Affice l\'URL du Site & QR Code.",

@@ -1,3 +1,5 @@
+const {MessageEmbed} = require("discord.js");
+
 module.exports = {
     aliases: ["zm"],
     name: "zenmarket",

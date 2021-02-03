@@ -1,5 +1,7 @@
+
+
 module.exports = {
-    aliases: ["zp"],
+    aliases: ["zpart"],
     name: "zenpartenariat",
     description: "Plus d\'info sur un Potentiel Partenariat.",
     category: "Forum",
