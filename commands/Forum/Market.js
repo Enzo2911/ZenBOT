@@ -7,7 +7,7 @@ module.exports = {
     category: "Forum",
     usage: "[]",
     run: async (Alexa, message) => {
-        const AlexaMarket = new Discord.MessageEmbed()
+        const AlexaMarket = new MessageEmbed()
         .setAuthor("Public Market: ")
         .setFooter('Copyright @AlexaBot @2021')
         .setURL('https://zencommunity.xyz/')

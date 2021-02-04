@@ -56,6 +56,9 @@ Alexa.on('message', async message => {
     // Alexa aime pas lorsqu'ont parle en privé avec elle
     if(message.channel.type == "dm") return;
 
+    
+let configs = require('./settings/config.json');
+
     try {
         // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
         if (message.mentions.has(Alexa.user) && !message.content.includes("@everyone") && !message.content.includes("@here")) {
