@@ -14,7 +14,7 @@ const loadCommands = (Alexa, Discord, Ascii, Chalk, commands, aliases, dirs = ".
         for (let file of commands) {
             const pull = require(`../${dirs}${dir}/${file}`);
          
-            if(pull.name && pull.aliases) {
+            if(pull.name) {
                 Alexa.commands.set(pull.name, pull);
                 table.addRow(dir, file, Chalk.green("On"));
             } else {

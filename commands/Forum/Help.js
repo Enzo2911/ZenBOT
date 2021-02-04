@@ -8,7 +8,7 @@ module.exports = {
     description: "Panel qui retourne des informations sur les divers commandes du bot.",
     usage: "[Commande Name]",
     run: async (Alexa, message, args, prefix) => {
-    
+    console.log(prefix)
     const AlexaHelp = new MessageEmbed();
     if(args[0]) {
         const cmd = Alexa.commands.get(args.join(" ").toLowerCase()) || Alexa.commands.get(Alexa.aliases.get(args.join(" ").toLowerCase()));

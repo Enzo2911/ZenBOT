@@ -1,4 +1,9 @@
 {
     "prefix": "?",
-    "token": "ODA1NTU1Mjg2ODQ0MjQzOTc4.YBcl0g.7R5ML29dJh0ckPgIXkA9jde6vu8" 
+    "host": "localhost",
+    "user": "root",
+    "pass": "",
+    "db": "zenbot",
+    "logdb": "806894760324890684",
+    "token": "ODA1NTU1Mjg2ODQ0MjQzOTc4.YBcl0g.7R5ML29dJh0ckPgIXkA9jde6vu8"
 }

@@ -7,8 +7,6 @@ const Ascii = require('ascii-table');
 const Chalk = require('chalk');
 const fs = require("fs");
 
-/* END */
-
 /* LOGIN */
 
 let config = require('./settings/config.json');
@@ -22,6 +20,21 @@ if(!config.token) {
        }
     })
 }
+
+/* END */
+
+/* Base de données */
+
+const mysql = require('mysql');
+
+const db = mysql.createConnection({
+    host     : config.host,
+    user     : config.user,
+    password : config.pass,
+    database : config.db
+});
+
+db.connect();
 
 /* END */
 
@@ -47,6 +60,11 @@ Alexa.once('ready', () => {
 });
 
 Alexa.on('message', async message => {
+
+    // Log DB // Met tout sa au four
+    let log = config.logdb;
+    // Ecrire une requete sql
+    let req;
     // Alexa est un peu fainéant elle reduit message.content en msg
     let msg = message.content;
     // raccourcci du prefix du a une erreur dans mon load export (maniere de fixe) pour appele le prefix
@@ -55,9 +73,21 @@ Alexa.on('message', async message => {
     if (message.author.bot) return;
     // Alexa aime pas lorsqu'ont parle en privé avec elle
     if(message.channel.type == "dm") return;
+    // Si la personne == pas enregistré dans la dbb alors Alexa le fait
+    db.query(`SELECT id, user FROM registre WHERE id = ${message.author.id}`, async (error, results) => {
+            if (error) throw error;
+            if(results.length === 0) {
+                Alexa.channels.cache.get(log).send("Une nouvelle personne va être entré dans la base de données. \n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
+                req = `INSERT INTO registre (id, user, ultimate, platinium) VALUES (${message.author.id}, "${message.author.username}", 0, 0)`
+                db.query(req, function (error) {
+                    if (error) throw error;
 
-    
-let configs = require('./settings/config.json');
+                })
+            } else {
+                return;
+            }
+        db.end();
+    });
 
     try {
         // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
@@ -83,8 +113,6 @@ let configs = require('./settings/config.json');
     // si la commende ne fais pas partie des commandes principales elle va chercher la commande dans les alias
     if (!command) command = Alexa.commands.get(Alexa.aliases.get(cmd));
     // lance la commande une fois trouvé
-    if (command) command.run(Alexa, message, args, prefix);
+    if (command) command.run(Alexa, message, args, prefix, log);
 });
-
-
 /* END */

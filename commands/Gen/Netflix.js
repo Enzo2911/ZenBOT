@@ -1,0 +1,31 @@
+const mysql = require('mysql');
+
+const db = mysql.createConnection({
+    host : 'localhost',
+    user     : 'root',
+    password : '',
+    database : 'zenbot'
+});
+
+db.connect();
+
+module.exports = {
+    //aliases: ["gen-nf", "gen-ntf"],
+    //name: "gen-netflix",
+    category: "GenerateurCompte",
+    description: "Permet de générer un compte Netflix si vous est Platinium ou Ultimate",
+    usage: '[Doit avoir un abonnement Platinium ou Ultimate]',
+    run: async (Alexa, message, args, prefix, log) => {
+        
+        db.query(`SELECT platinium as plat, ultimate as ulti FROM registre WHERE id = ${id}`, async (error, results) => {
+            if (error) throw error;
+
+            if (results[0].plat !== 1 || results[0].ultimate !== 1) return message.reply("Vous n'avez pas d'abonnement pour utilisé le Bot");
+
+            db.query(`SELECT user, pass, capture FROM gennetflix WHERE id = ${id}`, async (error, results) => {
+                if (error) throw error;
+            })
+        })
+    }
+}
+
