@@ -15,7 +15,7 @@ module.exports = {
         }
 
         //console.log(message.author.id)
-        if (!message.author.id === "805933660729638913") return;
+        if (message.author.id !== "805933660729638913") return;
           
         const Code = args.join(" ");
 

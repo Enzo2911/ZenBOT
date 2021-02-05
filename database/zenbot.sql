@@ -3,14 +3,6 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Base de données : `zenbot`
---
-CREATE DATABASE IF NOT EXISTS `zenbot` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `zenbot`;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `registre`
 --
 
@@ -32,7 +24,7 @@ DROP TABLE IF EXISTS `genspotify`;
 CREATE TABLE IF NOT EXISTS `genspotify` (
   `user` varchar(50) DEFAULT NULL,
   `pass` varchar(30) DEFAULT NULL,
-  `capture` varchar(255) DEFAULT NULL,
+  `capture` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,6 +37,8 @@ DROP TABLE IF EXISTS `gennetflix`;
 CREATE TABLE IF NOT EXISTS `gennetflix` (
   `user` varchar(50) DEFAULT NULL,
   `pass` varchar(30) DEFAULT NULL,
-  `capture` varchar(255) DEFAULT NULL,
+  `capture` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+
+-- A crée dans une DBB déja existante puis config le config.json pour changé les infos de la db et tout..

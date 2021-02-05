@@ -1,14 +1,14 @@
 const {MessageEmbed} = require("discord.js");
+const { readdirSync } = require("fs");
 
 module.exports = {
-    name: "zenhelp",
-    aliases: ["zh", "command", "info"],
-    description: "Affice l\'URL du Site & QR Code.",
-    category: "Forum",
+    name: "alexahelp",
+    aliases: ["command", "info"],
+    description: "Affiche les differente commanque que le bot propose + <COMMANDE> affiche les détails de la command en question.",
+    category: "Helpeur",
     description: "Panel qui retourne des informations sur les divers commandes du bot.",
     usage: "[Commande Name]",
     run: async (Alexa, message, args, prefix) => {
-    console.log(prefix)
     const AlexaHelp = new MessageEmbed();
     if(args[0]) {
         const cmd = Alexa.commands.get(args.join(" ").toLowerCase()) || Alexa.commands.get(Alexa.aliases.get(args.join(" ").toLowerCase()));
@@ -36,15 +36,52 @@ module.exports = {
         message.channel.send(AlexaHelp
             .setThumbnail(Alexa.user.displayAvatarURL())
             .setColor('#0099ff')
-            .setURL('https://zencommunity.xyz/')
-            .setTitle('Panel Help Discord & Forum Zen')
+            .setTitle('Panel Help AlexaBot')
             .setFooter('Copyright @AlexaBot @2021')
         );
     } else {
+/*
+        AlexaHelp
+            .setColor('#0099ff')
+            .setTitle('Panel Help Alexa')
+            .setFooter('Copyright @AlexaBot @2021')
+        const categoryList = readdirSync(`./commands/`)
+        for (let category of categoryList) {
+
+            try {
+                const commande = Alexa.commands.filter(cat => cat.category === category).map(cmd => cmd.name.charAt(0).toUpperCase() + cmd.name.slice(1)).join(' / ')
+                /* if (Alexa.commands.filter(cat => cat.category === category.toLowerCase()).map(cmd => cmd.name.charAt(0).toUpperCase() + cmd.name.slice(1)) == "") {
+                     commande = "None";
+                 }*/
+                 /*
+                AlexaHelp.addField(
+                    `${category}`,
+                    `Commande : ${commande}`
+                );
+                // console.log(`${Alexa.commands.filter(cat => cat.category === category).map(cmd => cmd.name.charAt(0).toUpperCase() + cmd.name.slice(1)).join(' / ')}`)
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+
+        return message.channel.send(AlexaHelp);*/
+        /*
+        for (const category of categoryList) {
+            let commandefile = Alexa.commands.filter(cat => cat.category === category.toLowerCase()).map(cmd => cmd.name.charAt(0).toUpperCase() + cmd.name.slice(1)).join('/ ');
+            AlexaHelp.addField(
+                `${category}`,
+                `t${commandefile}`
+            );
+        };    
+           
+        return message.channel.send(AlexaHelp);
+*/
+
+        
         message.channel.send(AlexaHelp
             .setColor('#0099ff')
-            .setTitle('Panel Help Discord & Forum Zen')
-            .setURL('https://Zencommunity.xyz')
+            .setTitle('Panel Help Alexa')
             .addFields(
                 { name: prefix + 'ZenForum', value: 'Affice l\'URL du Site & QR Code.', inline: true},
                 { name: prefix + 'ZenCoins', value: 'Explication sur le ZenCoins.', inline: true},
@@ -56,12 +93,11 @@ module.exports = {
                 { name: prefix + 'ZenMarket', value: 'Les règles du Public Market du Forum.', inline: true },
                 { name: prefix + 'ZenPost', value: '**Important** Explication du HIDDEN (Pour partagé sur le site).', inline: false },
             )
-            .setImage('https://cdn.discordapp.com/attachments/804820404547354647/804850111921651732/ZenZen.png')
             .setTimestamp()
-            .setURL('https://zencommunity.xyz/')
             .setThumbnail(Alexa.user.displayAvatarURL())
             .setFooter('Use help with \"commande\" name for specific description... Copyright @AlexaBot @2021')
         )
+        
            /*
         message.channel.send(AlexaHelp
         .setColor('#0099ff')
@@ -111,6 +147,5 @@ module.exports = {
             );
         }
         */
-        }
-    }
-}
+    }}}
+        

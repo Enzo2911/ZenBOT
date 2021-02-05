@@ -1,17 +1,19 @@
+let config = require('../../settings/config.json');
 const mysql = require('mysql');
 
 const db = mysql.createConnection({
-    host : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'zenbot'
+    host     : config.host,
+    user     : config.user,
+    password : config.pass,
+    database : config.db
 });
+
 
 db.connect();
 
 module.exports = {
     //aliases: ["gen-nf", "gen-ntf"],
-    //name: "gen-netflix",
+    // name: "gen-netflix",
     category: "GenerateurCompte",
     description: "Permet de générer un compte Netflix si vous est Platinium ou Ultimate",
     usage: '[Doit avoir un abonnement Platinium ou Ultimate]',

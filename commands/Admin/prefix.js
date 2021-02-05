@@ -2,8 +2,8 @@ const fs = require("fs");
 let config = require('../../settings/config.json');
 
 module.exports = {
-    aliases: ["admin-pf"],
-    // name: "admin-prefix",
+   // aliases: ["admin-pf"],
+   // name: "admin-prefix",
     category: "AdminBot",
     description: "Permet de changé le prefix du bot",
     usage: '"<NVPREFIX>"',

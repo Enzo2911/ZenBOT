@@ -34,8 +34,6 @@ const db = mysql.createConnection({
     database : config.db
 });
 
-db.connect();
-
 /* END */
 
 /* Categories */
@@ -59,6 +57,16 @@ Alexa.once('ready', () => {
     })     
 });
 
+Alexa.on('guildMemberRemove', async member => {
+    let log = config.logdb;
+    db.query(`DELETE FROM registre WHERE id = ${member.id}`, async (error, results) => {
+        if (error) throw error;
+        if (!error) {
+            Alexa.channels.cache.get(log).send("Une personne viens de partir du serveur je l'ai donc supprimé de la base de données \n```Nom : " + member.user.tag + " \nID : " + member.id + "```")
+        }
+    })
+})
+
 Alexa.on('message', async message => {
 
     // Log DB // Met tout sa au four
@@ -77,22 +85,22 @@ Alexa.on('message', async message => {
     db.query(`SELECT id, user FROM registre WHERE id = ${message.author.id}`, async (error, results) => {
             if (error) throw error;
             if(results.length === 0) {
+                //let time = new Date().toISOString().slice(0,19).replace("T", " ");
+                //console.log(time);
                 Alexa.channels.cache.get(log).send("Une nouvelle personne va être entré dans la base de données. \n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
-                req = `INSERT INTO registre (id, user, ultimate, platinium) VALUES (${message.author.id}, "${message.author.username}", 0, 0)`
+                req = `INSERT INTO registre (id, user, ultimate, platinium, \`Date Inscription\`) VALUES (${message.author.id}, "${message.author.username}", 0, 0, CURRENT_TIMESTAMP())`
                 db.query(req, function (error) {
                     if (error) throw error;
-
                 })
-            } else {
+            }  else if(results.length !== 0) {
                 return;
-            }
-        db.end();
+            } else { return; }
     });
 
     try {
         // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
         if (message.mentions.has(Alexa.user) && !message.content.includes("@everyone") && !message.content.includes("@here")) {
-            return message.reply('Pour connaitre mes commandes tapez \n**__'+ prefix + "ZenHelp__**") 
+            return message.reply('Pour connaitre mes commandes tapez \n**__'+ prefix + "AlexaHelp__**") 
         }
     } catch {
         // Si ont ne la pas mentionné sur le serveur ZenCommunity elle reste timide

@@ -1,26 +1,23 @@
+let config = require('../../settings/config.json');
 const mysql = require('mysql');
 
 const db = mysql.createConnection({
-    host : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'zenbot'
+    host     : config.host,
+    user     : config.user,
+    password : config.pass,
+    database : config.db
 });
-
-db.connect();
 
 module.exports = {
     aliases: ["admin-rm"],
     name: "admin-remove",
     category: "AdminDB",
     description: "Permet de supprimé les permission Platinium et Ultimate des utilisateurs de la db",
-    usage: '"<ID DE LA PERSONNE> // Reaction message : 1 = Platinium // 2 = Ultimate',
-    run: async (Alexa, message, args, prefix, log) => {
-        
+    usage: '"<ID DE LA PERSONNE>" // Reaction message : 1 = Platinium // 2 = Ultimate',
+    run: async (Alexa, message, args, prefix, log) => {  
         let id = args.join(" ");
-        let adminauthorization = ("805933660729638913", "799168976668065852", "701480495690547351")
-        if (message.author.id !== adminauthorization) return;
-
+        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351"]
+        if (!adminauthorization.includes(message.author.id)) return;
         if(!args[0]) {
             message.channel.send("Usage : " + prefix + "Admin-remove <ID>")
         } else {
@@ -41,7 +38,7 @@ module.exports = {
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
                                 Alexa.channels.cache.get(log).send("Remove Platinium\n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
-                                db.end();
+                              
                             });
                         } else {
                             message.delete()
@@ -56,7 +53,7 @@ module.exports = {
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
                                 Alexa.channels.cache.get(log).send("Remove Ultimate\n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
-                                db.end();
+                               
                             });
                         } else {
                             message.delete()
