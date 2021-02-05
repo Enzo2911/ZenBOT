@@ -41,11 +41,11 @@ module.exports = {
                     .setFooter('Copyright @AlexaBot @2021')
                     .setTitle("**Statistique de la base de données :**")
                     .addFields(
-                        { name: '__ID :__', value: `${results[0].id}`, inline: true},
-                        { name: '__Username Inscrit via la db :__', value: `${results[0].user}`, inline: true},
+                        { name: '__ID :__', value: `${results[0].id}`, inline: false},
+                        { name: '__Username Inscrit sur la db :__', value: `${results[0].user}`, inline: false},
                         { name: '__Ultimate : __', value: `${ultimate}`, inline: true},
                         { name: '__Platinium : __', value: `${platinium}`, inline: true},
-                        { name: '__Date Inscription DB : __', value: `${results[0].dateinscrit}`, inline: true},
+                        { name: '__Date Inscription dans la DB : __', value: `${results[0].dateinscrit}`, inline: false},
                     )
                     .setTimestamp()
                     .setThumbnail(Alexa.user.displayAvatarURL())
