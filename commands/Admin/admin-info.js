@@ -15,8 +15,8 @@ db.connect();
 module.exports = {
     name: "admin-info",
     category: "AdminDB",
-    description: "Affiche les stats de la db // NB Plat / NB Ultimate",
-    usage: '"[]',
+    description: "Affiche les stats de la db // NB Plat / NB Ultimate Ou via l'ID les stats de la personne associé a cette ID",
+    usage: '[ID]',
     run: async (Alexa, message, args, prefix, log) => {
 
         let id = args.join(" ");

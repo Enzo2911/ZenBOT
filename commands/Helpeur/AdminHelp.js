@@ -20,7 +20,7 @@ module.exports = {
             { name: '--------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
             { name: prefix + 'Admin-add', value: 'Ajoute un utilisateur via sont id dans la bdd en tant que ultimate ou platinium', inline: true },
             { name: prefix + 'Admin-remove', value: 'Enleve un utilisateur via sont id dans la bdd en tant que ultimate ou platinium', inline: true }, 
-            { name: prefix + 'Admin-info', value: 'Affich e les statistiques de la db (registre)', inline: true },
+            { name: prefix + 'Admin-info', value: 'Affich e les statistiques de la db (registre) // Ou affiche les Infos d\in ID', inline: true },
             { name: '----------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
         )
         .setTimestamp()
