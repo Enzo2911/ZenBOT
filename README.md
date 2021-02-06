@@ -25,9 +25,9 @@
         - [Get the Token](#GetToken)
         - [How to Make BOT](#HowMakeBot)
         - [Edit the File config.json](#EditFileConfig)
-      - [WEB SERVER](#ServerWEBUS)
-        - [Installation of the DB + Config](#Partie1US)
-        - [Installation of Serveur WEB + Config](#Partie2US)
+      - [WEB SERVER](#WEBServer)
+        - [Installation of the DB + Config](#Part1)
+        - [Installation of Serveur WEB + Config](#Part2)
 
 ## FR
 
@@ -217,4 +217,37 @@ File name: config.json
 - Configured admin perms via your Discord ID
 - And LOGDB which is the place where you will receive your logs when someone executes a command or enters the DB.
 
-    
+
+### WEBServer
+
+### Part1
+
+Installation of the DB
+
+- go to phpmyadmin if you have installed wamp or xamp and launched all the services, you just need to launch 127.0.0.1/phpmyadmin to access it.
+- Create a database (Name you want me to use alexabot for my part)
+- Go to the config.json file as the previous view and edit it replacing this information with your own:
+
+```json
+"host": "localhost",
+"user": "root",
+"pass": "",
+"db": "alexabot",
+```
+
+### Part2
+
+Installation of the WEB Server + Introduction of the site allowing us to fill the database.
+
+- by default you must put the site (the folder inscription_gen) in the www directory associated with your software ( WAMP or other )
+- then go [here](http://127.0.0.1) and normally the DB registration page is displayed
+- Now we only need to configure the configPHP.json file, which is also located in the settings folder with the same information as the previous step:
+
+```json
+[{
+    "host": "localhost",
+    "user": "root",
+    "pass": "",
+    "db": "zenbot"
+}]
+```
