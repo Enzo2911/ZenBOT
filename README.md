@@ -7,9 +7,9 @@
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
     - [Node JS](#NODEJS)
-      - [Etape Suivante](#EtapeSuivante)
-      - [Comment Crée Un BOT](#CommentCreeUnBOT)
-      - [WEB SERVER](#ServerWEB)
+      - [Verification Installation](#Verification)
+      - [Comment Crée Un BOT](#RecupéréToken)
+     - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
 ## FR
@@ -44,7 +44,10 @@
 
 ### NODEJS
 
-<p> Une Fois NODE JS installé et le Serveur WEB installé : </p>
+Installé [Node JS](https://nodejs.org)
+### Verication
+
+<p> Une Fois NODE JS installé : </p>
 <p> Instruction : </p>
   
 ```cmd
@@ -62,7 +65,7 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 ```
 
-### EtapeSuivante
+### RecupéréToken
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
 
