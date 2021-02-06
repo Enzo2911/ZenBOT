@@ -38,7 +38,6 @@
 
 ## WindowsVersion
 
-<div align="center">
 Une Fois NODE JS installé et le Serveur WEB installé : <br>
 Instruction :
   
@@ -61,7 +60,6 @@ Etape Suivante :
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
 
-</div>
 
 
 ## US
