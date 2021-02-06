@@ -40,7 +40,7 @@
 
 <div align="center">
 Une Fois NODE JS installé et le Serveur WEB installé :
-```prompt Instruction :
+``` Instruction :
 Windows R ==> cmd
 Node -v Affiche la version de NODE JS 
 Si rien ne saffiche veillez reinstallé Node JS 
