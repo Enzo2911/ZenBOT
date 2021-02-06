@@ -47,10 +47,13 @@ Alexa.categories = fs.readdirSync("./commands/");
 /* Console LAUNCH */
 
 Alexa.once('ready', () => {
+    // Clear console //
     /* Appel les commandes */
     loadCommands(Alexa, Discord, Ascii, Chalk, Alexa.commands, Alexa.aliases); 
     /* Logs ready console */
-    console.log("             Bot Lancé.");
+    console.log("Bot Lancé.                   Discord V12 Used");
+    console.log("")
+    console.log(Chalk.blue("Log DB :"))
     /* Activité de Alexa */
     Alexa.user.setActivity("zencommunity.xyz // @mentionmeforhelp", {
         type: "WATCHING",
@@ -68,6 +71,7 @@ Alexa.on('guildMemberRemove', async member => {
 })
 
 setTimeout(function(){ 
+    console.clear() 
     db.query(`UPDATE registre SET nbgenautohit = 2, nbgenplat = 5, nbgenulti = 3`, async (error) => {
         if (error) throw error;
         console.log("");
@@ -107,8 +111,10 @@ Alexa.on('message', async message => {
     let req;
     // Alexa est un peu fainéant elle reduit message.content en msg
     let msg = message.content;
-    // raccourcci du prefix du a une erreur dans mon load export (maniere de fixe) pour appele le prefix
+    // raccourci du prefix du a une erreur dans mon load export (maniere de fixe) pour appele le prefix
     let prefix = config.prefix;
+    // raccourci de lacces restrint admin 
+    let admin = config.adminconfirmer;
     // Alexa est un peu timide lorsqu'il faut discuté avec d'autre bot (H&F)
     if (message.author.bot) return;
     // Alexa aime pas lorsqu'ont parle en privé avec elle
@@ -153,6 +159,6 @@ Alexa.on('message', async message => {
     // si la commende ne fais pas partie des commandes principales elle va chercher la commande dans les alias
     if (!command) command = Alexa.commands.get(Alexa.aliases.get(cmd));
     // lance la commande une fois trouvé
-    if (command) command.run(Alexa, message, args, prefix, log);
+    if (command) command.run(Alexa, message, args, prefix, log, admin);
 });
 /* END */

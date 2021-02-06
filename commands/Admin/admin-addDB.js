@@ -16,15 +16,15 @@ module.exports = {
     category: "AdminDB",
     description: "Permet de modifié les permission  Platinium et Ultimate des utilisateurs de la db",
     usage: '"<ID DE LA PERSONNE>" // Reaction message : 1 = Platinium // 2 = Ultimate // 3 = AutoHit',
-    run: async (Alexa, message, args, prefix, log) => {
+    run: async (Alexa, message, args, prefix, log, admin) => {
+        let adminauthorization = admin;
         let id = args.join(" ");
-        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351", "734358014227906632"]
         if (!adminauthorization.includes(message.author.id)) return;
         if(!args[0]) {
             message.channel.send("Usage : " + prefix + "Admin-add <ID>")
         } else {
         db.query(`SELECT user, autohit, ultimate as ulti, platinium as plat FROM registre WHERE id = ${id}`, async (error, results) => {
-            if (error) throw error;
+            if (error) return message.reply("ID Invalide ou ID pas inscrit dans la DB");
             if (results.length === 0) return message.reply(`<@!${id}> n'est pas inscrit dans la base de données.`);
             message.react('1️⃣').then(() => message.react('2️⃣')).then(() => message.react('3️⃣'));
             const filter = (reaction, user) => {
@@ -35,7 +35,7 @@ module.exports = {
                     const reaction = collected.first();
                     if (reaction.emoji.name === '1️⃣') {
                         if (results[0].plat !== 1) {
-                            db.query(`UPDATE registre SET platinium = "1", \`Date Debut Abonnement\` = CURRENT_DATE(), , \`Date Fin Abonnement\` = \`Date Debut Abonnement\` + INTERVAL 5 YEAR WHERE id = ${id}`, function (error) {
+                            db.query(`UPDATE registre SET platinium = "1", \`Date Debut Abonnement\` = CURRENT_DATE(), \`Date Fin Abonnement\` = \`Date Debut Abonnement\` + INTERVAL 38 MONTH WHERE id = ${id}`, function (error) {
                                 if (error) throw error;
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")

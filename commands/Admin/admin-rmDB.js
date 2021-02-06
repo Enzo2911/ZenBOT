@@ -14,15 +14,15 @@ module.exports = {
     category: "AdminDB",
     description: "Permet de supprimé les permission Platinium et Ultimate des utilisateurs de la db",
     usage: '"<ID DE LA PERSONNE>" // Reaction message : 1 = Platinium // 2 = Ultimate // 3 = AutoHit',
-    run: async (Alexa, message, args, prefix, log) => {  
+    run: async (Alexa, message, args, prefix, log, admin) => {
+        let adminauthorization = admin;
         let id = args.join(" ");
-        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351", "734358014227906632"]
         if (!adminauthorization.includes(message.author.id)) return;
         if(!args[0]) {
             message.channel.send("Usage : " + prefix + "Admin-remove <ID>")
         } else {
         db.query(`SELECT user, autohit, ultimate as ulti, platinium as plat FROM registre WHERE id = ${id}`, async (error, results) => {
-            if (error) throw error;
+            if (error) return message.reply("ID Invalide ou ID pas inscrit dans la DB");
             if (results.length === 0) return message.reply(`<@!${id}> n'est pas inscrit dans la base de données.`);
             message.react('1️⃣').then(() => message.react('2️⃣'));
             const filter = (reaction, user) => {
@@ -38,7 +38,6 @@ module.exports = {
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
                                 Alexa.channels.cache.get(log).send("Remove Platinium\nNom : <@!" + id + "> \nID : " + id)
-                              
                             });
                         } else {
                             message.delete()
@@ -53,7 +52,6 @@ module.exports = {
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
                                 Alexa.channels.cache.get(log).send("Remove Ultimate\nNom : <@!" + id + ">\nID : " + id)
-                               
                             });
                         } else {
                             message.delete()
@@ -68,7 +66,6 @@ module.exports = {
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
                                 Alexa.channels.cache.get(log).send("Remove AutoHit\nNom : <@!" + id + ">\nID : " + id)
-                               
                             });
                         } else {
                             message.delete()

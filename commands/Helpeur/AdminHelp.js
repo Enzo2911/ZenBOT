@@ -7,8 +7,8 @@ module.exports = {
     category: "Helpeur",
     description: "Panel qui retourne des informations admin sur les divers commandes du bot.",
     usage: "[]",
-    run: async (Alexa, message, args, prefix) => {
-    let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351", "734358014227906632"]
+    run: async (Alexa, message, args, prefix, log, admin) => {
+    let adminauthorization = admin;
     if (!adminauthorization.includes(message.author.id)) return;
     const AlexaHelpA = new MessageEmbed();
     message.channel.send(AlexaHelpA

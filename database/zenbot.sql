@@ -21,6 +21,14 @@ CREATE TABLE IF NOT EXISTS `registre` (
   `Date Fin Abonnement` datetime DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `registre`
+--
+
+INSERT INTO `registre` (`id`, `user`, `autohit`, `ultimate`, `platinium`, `nbgenplat`, `nbgenulti`, `nbgenautohit`, `Date Inscription`, `Date Debut Abonnement`, `Date Fin Abonnement`) VALUES
+('805933660729638913', 'Sarah Jeffrey', 0, 0, 0, 5, 3, 2, '2021-02-06 16:34:30', NULL, NULL);
+COMMIT;
+
 -- --------------------------------------------------------
 
 --

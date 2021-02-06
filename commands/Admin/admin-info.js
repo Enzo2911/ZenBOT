@@ -17,14 +17,14 @@ module.exports = {
     category: "AdminDB",
     description: "Affiche les stats de la db // NB Plat / NB Ultimate Ou via l'ID les stats de la personne associé a cette ID",
     usage: '[ID]',
-    run: async (Alexa, message, args, prefix, log) => {
-
+    run: async (Alexa, message, args, prefix, log, admin) => {
+        let adminauthorization = admin;
         let id = args.join(" ");
-        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351", "734358014227906632"]
         if (!adminauthorization.includes(message.author.id)) return;
-        console.log("test")
         if(args[0]) {
-            db.query(`SELECT id, user, DATEDIFF(\`Date Fin Abonnement\`, \`Date Debut Abonnement\`) as restant, IF(ultimate = 1, 1, NULL) as yeultimate, IF(platinium = 1, 1, NULL) as yeplatinium, IF(autohit = 1, 1, NULL) as yeautohit, \`Date Inscription\` as dateinscrit, IF(platinium = 1, nbgenplat, NULL) as nbgenplatinium, IF(ultimate = 1, nbgenulti, NULL) as nbgenultimate, IF(autohit = 1, nbgenautohit, NULL) as nbgenautohit, \`Date Debut Abonnement\` as dda, \`Date Fin Abonnement\` as dfa FROM registre WHERE id = ${args[0]}`, async (error, results) => {
+            db.query(`SELECT id, user, DATEDIFF(\`Date Fin Abonnement\`, \`Date Debut Abonnement\`) as restant, IF(ultimate = 1, 1, NULL) as yeultimate, IF(platinium = 1, 1, NULL) as yeplatinium, IF(autohit = 1, 1, NULL) as yeautohit, \`Date Inscription\` as dateinscrit, IF(platinium = 1, nbgenplat, NULL) as nbgenplatinium, IF(ultimate = 1, nbgenulti, NULL) as nbgenultimate, IF(autohit = 1, nbgenautohit, NULL) as nbgenautohit, \`Date Debut Abonnement\` as dda, \`Date Fin Abonnement\` as dfa FROM registre WHERE id = ${id}`, async (error, results) => {
+                if (error) return message.reply("ID Invalide ou ID pas inscrit dans la DB");
+                if (results.length === 0) return message.reply(`<@!${id}> n'est pas inscrit dans la base de données.`);
                 const DBHELPID = new MessageEmbed();
                 let ultimate;
                 let platinium;
@@ -33,7 +33,6 @@ module.exports = {
                 let dateabonnement;
                 let dateabonnementfin;
                 let restant;
-                console.log(results[0])
                 if(results[0].yeautohit == null) {
                     autohit = "Nopp";
                 } else {
@@ -102,7 +101,7 @@ module.exports = {
                 .addFields(
                   //  { name: '__Nom de la DB :__', value: `$`, inline: true}
                     { name: '__Nombre d\'inscrit dans la db__', value: `${results[0].nbtotal}`, inline: false},
-                    { name: '__Stats AutoHit__', value: `${results[0].nbplatinium}`, inline: true},
+                    { name: '__Stats AutoHit__', value: `${results[0].nbautohit}`, inline: true},
                     { name: '__Stats Platinium__', value: `${results[0].nbplatinium}`, inline: true},
                     { name: '__Stats Ultimate__', value: `${results[0].nbultimate}`, inline: true},
                 )
