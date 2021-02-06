@@ -3,18 +3,22 @@
 ## Table of contents
 
 - [Version Francaise](#FR)
+  - [Introduction](#introduction)
   - [PreRequis](#prerequis)
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
     - [Node JS](#NODEJS)
       - [Verification Installation](#Verication)
       - [Comment Crée Un BOT](#RecupéréToken)
+      - [Edité le Fichier config.json](#EditéFichier.json)
      - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
 ## FR
 
-<p> Project Réalisé en 1 semaine </p> 
+## Introduction 
+
+<p> Bot Réalisé en 1 semaine </p> 
 <table>
   <th>
     Language Utilisé
@@ -29,6 +33,7 @@
     SQL 5% 
   </td>
 </table>
+<p> Multiple Commande + Générateur VIA DB My Sql + partie inscription dans la DB automatiquement via requête POST </p>
 
 ## PreRequis
 
@@ -78,7 +83,20 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 Et Voila nous avons récupéré le token mettez le de coté.
 
+### EditéFichier.json
+
+Le fichier que nous allons édité se trouve dans le dossier settings
+Nom du fichier : config.json 
+
+- Vous allez devoir mettre le token de votre bot dans la partie token
+- Vous pouvez aussi changé le prefix si vous le souhaité 
+- Configuré les perms admin via votre ID Discord
+- Et LOGDB qui est l'endroit ou vous allez recevoir vos log lorsqu'une personne executera une commande ou entrera dans la DB
+
 ### ServerWEB
+
+
+
 
 
 ## US
