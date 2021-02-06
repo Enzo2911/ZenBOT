@@ -14,11 +14,9 @@
 
 ## PreRequis
 
-Node JS 
-<br>
-AlexaBot 
-<br>  
-Serveur WEB (MySql / Apache2)
+- Node JS 
+- AlexaBot 
+- Serveur WEB (MySql / Apache2)
 
 ## LinuxVersion 
 
