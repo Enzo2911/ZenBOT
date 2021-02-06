@@ -12,7 +12,8 @@
         - [Comment Crée Un BOT](#RecupereToken)
         - [Edité le Fichier config.json](#EditeFichierConfig)
       - [WEB SERVER](#ServerWEB)
-        - [Partie 1](#Partie1)
+        - [Installation de la DB + Config](#Partie1)
+        - [Installation du Serveur WEB + Config](#Partie2)
 - [Version Anglais](#US)
 
 ## FR
@@ -102,12 +103,28 @@ Installation de la DB
 
 - allez sur phpmyadmin si vous avez installé wamp ou xamp et lancé tous les services il vous suffira alors de lancé 127.0.0.1/phpmyadmin pour y accédé
 - Crée une database (Nom que vous souhaité je vais utilisé alexabot pour ma part)
-- Allez sur le fichier config.json comme vue précédamment et Edité en remplacant c'est information par les votres
+- Allez sur le fichier config.json comme vue précédamment et Edité en remplacant c'est information par les votres :
 ```json
 "host": "localhost",
 "user": "root",
 "pass": "",
 "db": "alexabot",
+```
+
+### Partie2
+
+Installation du Serveur WEB + Introduction du site nous permettant de remplir la base de donnée.
+
+- par default vous devez mettre le site (le dossier inscription_gen) dans le repertoire www associé a votre logiciel ( WAMP ou autre )
+- puis allez [ici](http://127.0.0.1) et normalement la page d'inscription de la DB s'affiche
+- Il nous reste plus qu'a configuré le Fichier configPHP.json se trouvant aussi dans le dossier settings avec les memes information que l'étape précendante :
+```json
+[{
+    "host": "localhost",
+    "user": "root",
+    "pass": "",
+    "db": "zenbot"
+}]
 ```
 
 ## US
