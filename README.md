@@ -10,7 +10,7 @@
     - [Node JS](#NODEJS)
       - [Verification Installation](#Verication)
       - [Comment Crée Un BOT](#RecupereToken)
-      - [Edité le Fichier config.json](#EditeFichier.json)
+      - [Edité le Fichier config.json](#EditeFichierConfig)
      - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
@@ -83,7 +83,7 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 Et Voila nous avons récupéré le token mettez le de coté.
 
-### EditeFichier.json
+### EditeFichierConfig
 
 Le fichier que nous allons édité se trouve dans le dossier settings
 Nom du fichier : config.json 
