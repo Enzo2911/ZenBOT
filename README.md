@@ -18,10 +18,10 @@
 
 ## Windows Version
 
-<p> Une Fois NODE JS installé et le Serveur WEB installé : </p>
-<p> Windows R ==> cmd 
-<br> <br>
-<p> node -v Affiche la version de NODE JS 
+<p> Une Fois NODE JS installé et le Serveur WEB installé :
+Windows R ==> cmd 
+<br>
+node -v Affiche la version de NODE JS 
 <br> <br>
 Si rien ne s'affiche veillez reinstallé Node JS 
 <br> <br>
