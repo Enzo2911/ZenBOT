@@ -22,8 +22,7 @@
       node -v Affiche la version de NODE JS <br>
         Si rien ne s'affiche veillez reinstallé Node JS <br>
       une fois la vérification effectuée allez dans le répertoire où est localisé AlexaBOT via cd destination  <br> </p>
-       <p text-align: center> --> npm start </p> <br>
-      <p> 
+        --> npm start <br>
       tout devrait s'installer si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
       </p>
     
