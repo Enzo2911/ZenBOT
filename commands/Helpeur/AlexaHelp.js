@@ -4,7 +4,7 @@ const { readdirSync } = require("fs");
 module.exports = {
     name: "alexahelp",
     aliases: ["command", "info"],
-    description: "Affiche les differente commanque que le bot propose + <COMMANDE> affiche les détails de la command en question.",
+    description: "Affiche les differente pannel help que le bot propose + <COMMANDE> affiche les détails de la commande en question.",
     category: "Helpeur",
     description: "Panel qui retourne des informations sur les divers commandes du bot.",
     usage: "[Commande Name]",
@@ -40,6 +40,20 @@ module.exports = {
             .setFooter('Copyright @AlexaBot @2021')
         );
     } else {
+        message.channel.send(AlexaHelp
+            .setColor('#0099ff')
+            .setTitle('Panel Help Alexa')
+            .addFields(
+                { name: prefix + 'AlexaHelp', value: 'Affiche le pannel actuel + si une commande est mentionné affiche les détails et plus de celle ci.', inline: false },
+                { name: prefix + 'AdminHelp', value: 'Affice le pannel help admin.', inline: false},
+                { name: prefix + 'ForumHelp', value: 'Affiche le pannel help du forum.', inline: false},
+                { name: prefix + 'GenHelp', value: 'Affiche le pannel help du generateur.', inline: false},
+            )
+            .setTimestamp()
+            .setThumbnail(Alexa.user.displayAvatarURL())
+            .setFooter('Use AlexaHelp with \"commande\" name for specific description... Copyright @AlexaBot @2021')
+        )
+        
 /*
         AlexaHelp
             .setColor('#0099ff')
@@ -78,26 +92,6 @@ module.exports = {
         return message.channel.send(AlexaHelp);
 */
 
-        
-        message.channel.send(AlexaHelp
-            .setColor('#0099ff')
-            .setTitle('Panel Help Alexa')
-            .addFields(
-                { name: prefix + 'ZenForum', value: 'Affice l\'URL du Site & QR Code.', inline: true},
-                { name: prefix + 'ZenCoins', value: 'Explication sur le ZenCoins.', inline: true},
-                { name: '--------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
-                { name: prefix + 'ZenUpgrade', value: 'Affiche les différents grades du site+ les avantages.', inline: true },
-                { name: prefix + 'ZenPartenariat', value: 'Plus d\'info sur un Potentiel Partenariat.', inline: true },
-                { name: '----------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
-                { name: prefix + 'ZenShoutbox', value: 'Les règles de la shoutbox du Forum.', inline: true },
-                { name: prefix + 'ZenMarket', value: 'Les règles du Public Market du Forum.', inline: true },
-                { name: prefix + 'ZenPost', value: '**Important** Explication du HIDDEN (Pour partagé sur le site).', inline: false },
-            )
-            .setTimestamp()
-            .setThumbnail(Alexa.user.displayAvatarURL())
-            .setFooter('Use help with \"commande\" name for specific description... Copyright @AlexaBot @2021')
-        )
-        
            /*
         message.channel.send(AlexaHelp
         .setColor('#0099ff')
@@ -147,5 +141,6 @@ module.exports = {
             );
         }
         */
-    }}}
+    }}
+}
         

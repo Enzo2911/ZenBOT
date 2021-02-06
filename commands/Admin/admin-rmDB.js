@@ -16,7 +16,7 @@ module.exports = {
     usage: '"<ID DE LA PERSONNE>" // Reaction message : 1 = Platinium // 2 = Ultimate',
     run: async (Alexa, message, args, prefix, log) => {  
         let id = args.join(" ");
-        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351"]
+        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351", "734358014227906632"]
         if (!adminauthorization.includes(message.author.id)) return;
         if(!args[0]) {
             message.channel.send("Usage : " + prefix + "Admin-remove <ID>")
@@ -33,11 +33,11 @@ module.exports = {
                     const reaction = collected.first();
                     if (reaction.emoji.name === '1️⃣') {
                         if (results[0].plat !== 0) {
-                            db.query(`UPDATE registre SET platinium = "0" WHERE id = ${message.author.id}`, function (error) {
+                            db.query(`UPDATE registre SET platinium = "0" WHERE id = ${id}`, function (error) {
                                 if (error) throw error;
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
-                                Alexa.channels.cache.get(log).send("Remove Platinium\n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
+                                Alexa.channels.cache.get(log).send("Remove Platinium\n```Nom : ```<@!" + id + ">``` \nID : " + id + "```")
                               
                             });
                         } else {
@@ -48,11 +48,11 @@ module.exports = {
                     if (reaction.emoji.name === '2️⃣') {
                         if (results.length === 0) return message.reply(`<@!${id}> n'est pas inscrit dans la base de données.`);
                         if (results[0].ulti !== 0) {
-                            db.query(`UPDATE registre SET ultimate = "0" WHERE id = ${message.author.id}`, function (error) {
+                            db.query(`UPDATE registre SET ultimate = "0" WHERE id = ${id}`, function (error) {
                                 if (error) throw error;
                                 message.delete()
                                 message.reply("Alexa a éffectué votre ordre")
-                                Alexa.channels.cache.get(log).send("Remove Ultimate\n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
+                                Alexa.channels.cache.get(log).send("Remove Ultimate\n```Nom : ```<@!" + id + ">``` \nID : " + id + "```")
                                
                             });
                         } else {

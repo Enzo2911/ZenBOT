@@ -62,15 +62,27 @@ Alexa.on('guildMemberRemove', async member => {
     db.query(`DELETE FROM registre WHERE id = ${member.id}`, async (error, results) => {
         if (error) throw error;
         if (!error) {
-            Alexa.channels.cache.get(log).send("Une personne viens de partir du serveur je l'ai donc supprimé de la base de données \n```Nom : " + member.user.tag + " \nID : " + member.id + "```")
+            Alexa.channels.cache.get(log).send("Une personne viens de partir du serveur je l'ai donc supprimé de la base de données \n```Nom : ```" + member.user.tag + "``` \nID : " + member.id + "```")
         }
     })
 })
+
+setTimeout(function(){ 
+    let log = config.logdb;
+    db.query(`UPDATE registre SET nbgenplat = 5, nbgenulti = 3`, async (error, results) => {
+        if (error) throw error;
+        console.log("");
+        console.log(Chalk.bgGreen("Une nouvelle journée commence les nombre de gen ont donc été remis par default"))
+        console.log("");
+    })
+}, 8,64e+7);  
 
 Alexa.on('message', async message => {
 
     // Log DB // Met tout sa au four
     let log = config.logdb;
+    // RESET GEN DB
+  
     // Ecrire une requete sql
     let req;
     // Alexa est un peu fainéant elle reduit message.content en msg
@@ -87,7 +99,7 @@ Alexa.on('message', async message => {
             if(results.length === 0) {
                 //let time = new Date().toISOString().slice(0,19).replace("T", " ");
                 //console.log(time);
-                Alexa.channels.cache.get(log).send("Une nouvelle personne va être entré dans la base de données. \n```Nom : " + message.author.username + " \nID : " + message.author.id + "```")
+                Alexa.channels.cache.get(log).send("Une nouvelle personne va être entré dans la base de données. \n```Nom : ```" + message.author.username + "```\nID : " + message.author.id + "```")
                 req = `INSERT INTO registre (id, user, ultimate, platinium, \`Date Inscription\`) VALUES (${message.author.id}, "${message.author.username}", 0, 0, CURRENT_TIMESTAMP())`
                 db.query(req, function (error) {
                     if (error) throw error;

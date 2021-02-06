@@ -20,7 +20,7 @@ module.exports = {
     run: async (Alexa, message, args, prefix, log) => {
 
         let id = args.join(" ");
-        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351"]
+        let adminauthorization = ["805933660729638913", "799168976668065852", "701480495690547351", "734358014227906632"]
         if (!adminauthorization.includes(message.author.id)) return;
         if(args[0]) {
             db.query(`SELECT id, user, IF(ultimate = 1, 1, NULL) as yeultimate, IF(platinium = 1, 1, NULL) as yeplatinium, \`Date Inscription\` as dateinscrit FROM registre WHERE id = ${args[0]}`, async (error, results) => {
