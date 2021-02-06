@@ -3,14 +3,14 @@
 ## Table of contents
 
 - [Version Francaise](#FR)
-  - [Launch Bot](#lancementbot)
+  - [PreRequis](#prerequis)
 - [Version Anglais](#US)
 
 ## FR
 
 <p>Project Réalisé en 1 semaine</p>
 
-## LancementBot
+## Les PreRequis
 
 <p>Pour démarré le bot 3 requis : <br>
   Node JS <br>
