@@ -40,10 +40,9 @@
 
 <div align="center">
 Une Fois NODE JS installé et le Serveur WEB installé : <br>
- 
-``` 
 Instruction :
-
+  
+```cmd
 Windows R ==> cmd
 
 Node -v Affiche la version de NODE JS 
@@ -57,7 +56,11 @@ Une fois la vérification effectuée allez dans le répertoire où est localisé
 tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule.
 
 ```
-plus qu'a récuperé le token de sont [bot discord](http://discord.com/developers/applications)
+
+Etape Suivante :
+
+- Récupé le token de sont [bot discord](http://discord.com/developers/applications)
+
 </div>
 
 
