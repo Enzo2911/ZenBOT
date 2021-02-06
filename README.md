@@ -14,11 +14,11 @@
 
 ## PreRequis
 
-<p>Pour démarré le bot 3 requis : <br>
-  Node JS <br>
-  AlexaBot <br>
-  Serveur WEB (MySql / Apache2)
-</p>
+Node JS 
+<br>
+AlexaBot 
+<br>  
+Serveur WEB (MySql / Apache2)
 
 ## LinuxVersion 
 
