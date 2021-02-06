@@ -13,15 +13,17 @@
 <p> Project Réalisé en 1 semaine </p>
 Language Utilisé : 
 <table>
-  <br>
+  <tr>
+    Stats
+  </tr>
   <td>
-  Javascript 75%
+    Javascript 75%
   </td>
   <td>
-  PHP / HTML 15%
+    PHP / HTML 15%
   </td>
   <td>
-  SQL 5% 
+    SQL 5% 
   </td>
 </table>
 
