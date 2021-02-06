@@ -7,7 +7,7 @@
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
     - [Node JS](#NODEJS)
-      - [Verification Installation](#Verification)
+      - [Verification Installation](#Verication)
       - [Comment Crée Un BOT](#RecupéréToken)
      - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
@@ -45,6 +45,7 @@
 ### NODEJS
 
 Installé [Node JS](https://nodejs.org)
+
 ### Verication
 
 <p> Une Fois NODE JS installé : </p>
