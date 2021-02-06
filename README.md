@@ -12,8 +12,8 @@
 
 <p> Project Réalisé en 1 semaine </p>
 Language Utilisé : 
-<br>
 <table>
+  <br>
   <td>
   Javascript 75%
   </td>
