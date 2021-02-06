@@ -40,15 +40,13 @@
 
 <div align="center">
 Une Fois NODE JS installé et le Serveur WEB installé :
-```
-Instruction :
-
+```prompt Instruction :
 Windows R ==> cmd
 Node -v Affiche la version de NODE JS 
-Si rien ne s'affiche veillez reinstallé Node JS 
+Si rien ne saffiche veillez reinstallé Node JS 
 Une fois la vérification effectuée allez dans le répertoire où est localisé AlexaBOT via cd destination  
   --> npm start 
-tout devrait s'installer si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
+tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
 ```
 </div>
 
