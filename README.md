@@ -9,8 +9,8 @@
   - [Installation Windows Version](#WindowsVersion)
     - [Node JS](#NODEJS)
       - [Verification Installation](#Verication)
-      - [Comment Crée Un BOT](#RecupéréToken)
-      - [Edité le Fichier config.json](#EditéFichier.json)
+      - [Comment Crée Un BOT](#RecupereToken)
+      - [Edité le Fichier config.json](#EditeFichier.json)
      - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
@@ -71,7 +71,7 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 ```
 
-### RecupéréToken
+### RecupereToken
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
 
@@ -83,7 +83,7 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 Et Voila nous avons récupéré le token mettez le de coté.
 
-### EditéFichier.json
+### EditeFichier.json
 
 Le fichier que nous allons édité se trouve dans le dossier settings
 Nom du fichier : config.json 
