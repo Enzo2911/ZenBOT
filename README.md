@@ -39,7 +39,7 @@
 ## WindowsVersion
 
 <div align="center">
-Une Fois NODE JS installé et le Serveur WEB installé :
+Une Fois NODE JS installé et le Serveur WEB installé : <br>
  
 ``` 
 Instruction :
