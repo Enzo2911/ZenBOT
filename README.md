@@ -15,7 +15,8 @@
         - [Installation de la DB + Config](#Partie1)
         - [Installation du Serveur WEB + Config](#Partie2)
 - [Version Anglais](#US)
-  [Introduction](#introductionUS)
+  - [Introduction](#introductionUS)
+  - [PreRequis](#prerequisUS)
 
 ## FR
 
