@@ -6,7 +6,7 @@
 
 ## Launch le bot
 
-<p> Pour démarré le bot 3 requis :
+<p> Pour démarré le bot 3 requis : <br>
   Node JS <br>
   AlexaBot <br>
   Serveur WEB (MySql / Apache2)
@@ -22,7 +22,7 @@
       node -v Affiche la version de NODE JS <br>
         Si rien ne s'affiche veillez reinstallé Node JS <br>
       une fois la vérification effectuée allez dans le répertoire où est localisé AlexaBOT via cd destination  <br> </p>
-       <p align: center> --> npm start </p> <br>
+       <p text-align: center> --> npm start </p> <br>
       <p> 
       tout devrait s'installer si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
       </p>
