@@ -12,9 +12,18 @@
 <p> 
 Project Réalisé en 1 semaine 
   <br>
-Language Utilisé : Javascript 75%
-                   PHP / HTML 15%
-                   SQL 5% 
+Language Utilisé : 
+<table>
+  <td>
+  Javascript 75%
+  </td>
+  <td>
+  PHP / HTML 15%
+  </td>
+  <td>
+  SQL 5% 
+  </td>
+</table>
 </p>
 
 ## PreRequis
