@@ -56,9 +56,17 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 ```
 
-Etape Suivante :
+### Etape Suivante :
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
+
+### Comment crée un BOT ?
+
+- New Application
+- Bot
+- Add Bot
+
+Et VOila nous avons récupéré le token mettez le de coté.
 
 
 
