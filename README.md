@@ -5,18 +5,20 @@
 - [Version Francaise](#FR)
   - [Introduction](#introductionFR)
   - [PreRequis](#prerequisFR)
-  - [Installation Linux Version](#LinuxVersion)
-  - [Installation Windows Version](#WindowsVersion)
-      - [Node JS](#NODEJS)
-        - [Verification Installation](#Verication)
-        - [Comment Crée Un BOT](#RecupereToken)
-        - [Edité le Fichier config.json](#EditeFichierConfig)
-      - [WEB SERVER](#ServerWEB)
-        - [Installation de la DB + Config](#Partie1)
-        - [Installation du Serveur WEB + Config](#Partie2)
+  - [Installation Linux Version](#LinuxVersionFR)
+  - [Installation Windows Version](#WindowsVersionFR)
+      - [Node JS](#NODEJSFR)
+        - [Verification Installation](#VericationFR)
+        - [Comment Crée Un BOT](#RecupereTokenFR)
+        - [Edité le Fichier config.json](#EditeFichierConfigFR)
+      - [WEB SERVER](#ServerWEBFR)
+        - [Installation de la DB + Config](#Partie1FR)
+        - [Installation du Serveur WEB + Config](#Partie2FR)
 - [Version Anglais](#US)
   - [Introduction](#introductionUS)
   - [PreRequis](#prerequisUS)
+   - [Linux Version Installation](#LinuxVersionUS)
+  - [Windows Version Installation](#WindowsVersionUS)
 
 ## FR
 
@@ -45,17 +47,17 @@
 - AlexaBot 
 - Serveur WEB (MySql / Apache2)
 
-## LinuxVersion 
+## LinuxVersionFR
 
 
 
-## WindowsVersion
+## WindowsVersionFR
 
-### NODEJS
+### NODEJSFR
 
 Installé [Node JS](https://nodejs.org)
 
-### Verication
+### VericationFR
 
 <p> Une Fois NODE JS installé : </p>
 <p> Instruction : </p>
@@ -75,11 +77,11 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 ```
 
-### RecupereToken
+### RecupereTokenFR
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
 
-### CommentCreeUnBOT
+### CommentCreeUnBOTFR
 
 - New Application
 - Bot
@@ -87,7 +89,7 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 Et Voila nous avons récupéré le token mettez le de coté.
 
-### EditeFichierConfig
+### EditeFichierConfigFR
 
 Le fichier que nous allons édité se trouve dans le dossier settings
 Nom du fichier : config.json 
@@ -97,9 +99,9 @@ Nom du fichier : config.json
 - Configuré les perms admin via votre ID Discord
 - Et LOGDB qui est l'endroit ou vous allez recevoir vos log lorsqu'une personne executera une commande ou entrera dans la DB
 
-### ServerWEB
+### ServerWEBFR
 
-### Partie1
+### Partie1FR
 
 Installation de la DB
 
@@ -113,7 +115,7 @@ Installation de la DB
 "db": "alexabot",
 ```
 
-### Partie2
+### Partie2FR
 
 Installation du Serveur WEB + Introduction du site nous permettant de remplir la base de donnée.
 
@@ -156,5 +158,16 @@ Installation du Serveur WEB + Introduction du site nous permettant de remplir la
 - AlexaBot 
 - Serveur WEB (MySql / Apache2)
 
+## LinuxVersionUS
+
+
+
+## WindowsVersionUS
+
+### NODEJS
+
+Installé [Node JS](https://nodejs.org)
+
+### Verication
 
     
