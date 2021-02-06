@@ -9,9 +9,8 @@
 - [Version Anglais](#US)
 
 ## FR
-<p> 
-Project Réalisé en 1 semaine 
-  <br>
+
+<p> Project Réalisé en 1 semaine </p>
 Language Utilisé : 
 <table>
   <td>
@@ -24,7 +23,6 @@ Language Utilisé :
   SQL 5% 
   </td>
 </table>
-</p>
 
 ## PreRequis
 
