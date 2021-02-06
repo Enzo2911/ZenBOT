@@ -7,11 +7,12 @@
   - [PreRequis](#prerequis)
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
-    - [Node JS](#NODEJS)
-      - [Verification Installation](#Verication)
-      - [Comment Crée Un BOT](#RecupereToken)
-      - [Edité le Fichier config.json](#EditeFichierConfig)
-     - [WEB SERVER](#ServerWEB)
+      - [Node JS](#NODEJS)
+        - [Verification Installation](#Verication)
+        - [Comment Crée Un BOT](#RecupereToken)
+        - [Edité le Fichier config.json](#EditeFichierConfig)
+      - [WEB SERVER](#ServerWEB)
+        - [Partie 1](#Partie1)
 - [Version Anglais](#US)
 
 ## FR
@@ -95,9 +96,19 @@ Nom du fichier : config.json
 
 ### ServerWEB
 
+### Partie1
 
+Installation de la DB
 
-
+- allez sur phpmyadmin si vous avez installé wamp ou xamp et lancé tous les services il vous suffira alors de lancé 127.0.0.1/phpmyadmin pour y accédé
+- Crée une database (Nom que vous souhaité je vais utilisé alexabot pour ma part)
+- Allez sur le fichier config.json comme vue précédamment et Edité en remplacant c'est information par les votres
+```json
+"host": "localhost",
+"user": "root",
+"pass": "",
+"db": "alexabot",
+```
 
 ## US
 
