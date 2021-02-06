@@ -58,7 +58,7 @@
 
 ## InstallationLinux
 
-
+Plus Tard
 
 ## InstallationWindows
 
@@ -169,7 +169,7 @@ Installation du Serveur WEB + Introduction du site nous permettant de remplir la
 
 ## LinuxInstallation
 
-
+Plus Tard
 
 ## WindowsInstallation
 
