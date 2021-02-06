@@ -116,7 +116,9 @@ Installation de la DB
 
 - allez sur phpmyadmin si vous avez installé wamp ou xamp et lancé tous les services il vous suffira alors de lancé 127.0.0.1/phpmyadmin pour y accédé
 - Crée une database (Nom que vous souhaité je vais utilisé alexabot pour ma part)
+- Allez dans le dossier base de données et importez le fichier nommé TableTYPEAlexaBOT.sql dans la base de données que vous avez créée
 - Allez sur le fichier config.json comme vue précédamment et Edité en remplacant c'est information par les votres :
+
 ```json
 "host": "localhost",
 "user": "root",
@@ -226,6 +228,8 @@ Installation of the DB
 
 - go to phpmyadmin if you have installed wamp or xamp and launched all the services, you just need to launch 127.0.0.1/phpmyadmin to access it.
 - Create a database (Name you want me to use alexabot for my part)
+- go to phpmyadmin if you have installed wamp or xamp and launched all the services, you just need to launch 127.0.0.1/phpmyadmin to access it.
+- Go to folder database and import the file named TableTYPEAlexaBOT.sql in the database you have create
 - Go to the config.json file as the previous view and edit it replacing this information with your own:
 
 ```json
