@@ -7,8 +7,8 @@
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
    - [Node JS](#NODEJS)
-   - [Etape Suivante](#EtapeSuivante:)
-   - [Comment Crée Un BOT](#CommentCréeUnBOT?)
+   - [Etape Suivante](#EtapeSuivante)
+   - [Comment Crée Un BOT](#CommentCreeUnBOT)
    - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
@@ -62,11 +62,11 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 ```
 
-### EtapeSuivante:
+### EtapeSuivante
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
 
-### CommentCréeUnBOT?
+### CommentCreeUnBOT
 
 - New Application
 - Bot
