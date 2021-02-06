@@ -7,9 +7,10 @@
   - [PreRequis](#prerequisFR)
   - [Installation Linux Version](#InstallationLinux)
   - [Installation Windows Version](#InstallationWindows)
-      - [Node JS](#NODEJSFR)
+      - [Node JS](#NODEJS-FR)
         - [Verification Installation](#Verication)
-        - [Comment Crée Un BOT](#RecupereToken)
+        - [Récupéré le Token](#RecupereToken)
+        - [Comment Crée un BOT](#CommentCreeUnBOT)
         - [Edité le Fichier config.json](#EditeFichierConfig)
       - [WEB SERVER](#ServerWEB)
         - [Installation de la DB + Config](#Partie1)
@@ -19,9 +20,10 @@
   - [PreRequis](#prerequisUS)
   - [Linux Version Installation](#LinuxInstallation)
   - [Windows Version Installation](#WindowsInstallation)
-      - [Node JS](#NODEJSUS)
+      - [Node JS](#NODEJS-US)
         - [Verification Installation](#Checking)
-        - [How to Make BOT](#GetToken)
+        - [Get the Token](#GetToken)
+        - [How to Make BOT](#HowMakeBot)
         - [Edit the File config.json](#EditFileConfig)
       - [WEB SERVER](#ServerWEBUS)
         - [Installation of the DB + Config](#Partie1US)
@@ -60,7 +62,7 @@
 
 ## InstallationWindows
 
-### NODEJSFR
+### NODEJS-FR
 
 Installé [Node JS](https://nodejs.org)
 
@@ -171,10 +173,48 @@ Installation du Serveur WEB + Introduction du site nous permettant de remplir la
 
 ## WindowsInstallation
 
-### NODEJSUS
+### NODEJS-US
 
-Installé [Node JS](https://nodejs.org)
+Please Installed this : [Node JS](https://nodejs.org)
 
 ### Cheking
+
+<p> When NODE JS installed : </p>
+<p> Instruction: </p>
+  
+```cmd
+Windows R ==> cmd
+
+Node -v Displays the version of NODE JS 
+
+If nothing is displayed, please reinstall Node JS. 
+
+Once the verification is done, go to the directory where AlexaBOT is located via cd destination.
+
+  --> npm start 
+  
+everything should be fine if you encounter some problems with the manually installed modules npm i nameofmodule.
+
+```
+
+### GetToken
+
+- Retrieved the token from this [bot discord](http://discord.com/developers/applications)
+
+### HowMakeBot
+
+- New Application
+- Bot
+- Add Bot
+
+### EditFileConfig
+
+The file we are going to edit is in the settings folder.
+File name: config.json 
+
+- You'll have to put the token of your bot in the token part
+- You can also change the prefix if you want to. 
+- Configured admin perms via your Discord ID
+- And LOGDB which is the place where you will receive your logs when someone executes a command or enters the DB.
 
     
