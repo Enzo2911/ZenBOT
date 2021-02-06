@@ -2,11 +2,11 @@
 
 ### Version FR
 
-<p> Project Réalisé en 1 semaine </p>
+<p>Project Réalisé en 1 semaine</p>
 
 ## Launch le bot
 
-<p> Pour démarré le bot 3 requis : <br>
+<p>Pour démarré le bot 3 requis : <br>
   Node JS <br>
   AlexaBot <br>
   Serveur WEB (MySql / Apache2)
@@ -14,17 +14,22 @@
 
 ## Linux Version 
 
+
+
 ## Windows Version
 
-  <p> Une Fois NODE JS installé et le Serveur WEB installé : </p>
-  <br>
-    <p> Windows R ==> cmd <br>
-  <br>
-      node -v Affiche la version de NODE JS <br>
-  <br>
-        Si rien ne s'affiche veillez reinstallé Node JS <br>
-      une fois la vérification effectuée allez dans le répertoire où est localisé AlexaBOT via cd destination  <br> 
-        --> npm start <br>
-      tout devrait s'installer si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
-      </p>
+<p> Une Fois NODE JS installé et le Serveur WEB installé : </p>
+<br> <br> 
+<p> Windows R ==> cmd 
+<br> <br>
+<p> node -v Affiche la version de NODE JS 
+<br> <br>
+Si rien ne s'affiche veillez reinstallé Node JS 
+<br>
+une fois la vérification effectuée allez dans le répertoire où est localisé AlexaBOT via cd destination  
+<br> 
+--> npm start 
+<br>
+tout devrait s'installer si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
+</p>
     
