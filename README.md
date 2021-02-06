@@ -6,6 +6,10 @@
   - [PreRequis](#prerequis)
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
+   - [Node JS](#NODEJS)
+   - [Etape Suivante](#EtapeSuivante)
+   - [Comment Crée Un BOT](#CommentCréeUnBOT)
+   - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
 ## FR
@@ -38,6 +42,8 @@
 
 ## WindowsVersion
 
+### NODEJS
+
 <p> Une Fois NODE JS installé et le Serveur WEB installé : </p>
 <p> Instruction : </p>
   
@@ -56,18 +62,19 @@ tout devrait sinstaller si vous rencontrez quelques problèmes pour les modules 
 
 ```
 
-### Etape Suivante :
+### EtapeSuivante :
 
 - Récupé le token de sont [bot discord](http://discord.com/developers/applications)
 
-### Comment crée un BOT ?
+### CommentCréeUnBOT ?
 
 - New Application
 - Bot
 - Add Bot
 
-Et VOila nous avons récupéré le token mettez le de coté.
+Et Voila nous avons récupéré le token mettez le de coté.
 
+### ServerWEB
 
 
 ## US
