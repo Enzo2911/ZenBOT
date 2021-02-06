@@ -10,11 +10,10 @@
 
 ## FR
 
-<p> Project Réalisé en 1 semaine </p>
-Language Utilisé : 
+<p> Project Réalisé en 1 semaine </p> 
 <table>
   <th>
-    Stats
+    Language Utilisé
   </th>
   <td>
     Javascript 75%
