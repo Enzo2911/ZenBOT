@@ -9,8 +9,12 @@
 - [Version Anglais](#US)
 
 ## FR
-
-<p>Project Réalisé en 1 semaine</p>
+<p>
+Project Réalisé en 1 semaine 
+Language Utilisé : Javascript 75%
+                   PHP / HTML 15%
+                   SQL 5% 
+</p>
 
 ## PreRequis
 
