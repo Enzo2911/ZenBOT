@@ -3,14 +3,16 @@
 ## Table of contents
 
 - [Version Francaise](#FR)
-  - [PreRequis](#les pre requis)
+  - [PreRequis](#prerequis)
+  - [Installation Linux Version](#LinuxVersion)
+  - [Installation Windows Version](#WindowsVersion)
 - [Version Anglais](#US)
 
 ## FR
 
 <p>Project Réalisé en 1 semaine</p>
 
-## Les Pre Requis
+## PreRequis
 
 <p>Pour démarré le bot 3 requis : <br>
   Node JS <br>
@@ -18,11 +20,11 @@
   Serveur WEB (MySql / Apache2)
 </p>
 
-## Linux Version 
+## LinuxVersion 
 
 
 
-## Windows Version
+## WindowsVersion
 
 <p> Une Fois NODE JS installé et le Serveur WEB installé :
 Windows R ==> cmd
