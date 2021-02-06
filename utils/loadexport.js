@@ -6,7 +6,9 @@ const fs = require("fs");
 
 const loadCommands = (Alexa, Discord, Ascii, Chalk, commands, aliases, dirs = "./commands/") => {
     
-    const table = new Ascii().setHeading("Catégorie", "Commands", "Stats"); // Special Thx to Depressedaf1800 for give this idea to make tableau with stats.
+    // Crée un tableau
+    const table = new Ascii().setHeading("Catégories", "Commandes", "Stats"); // Special Thx to Depressedaf1800 for give this idea to make tableau with stats.
+    // Centre les première valeur du tableau
     table.setAlign(0, Ascii.CENTER)
     table.setAlign(1, Ascii.LEFT)
     fs.readdirSync(`${dirs}`).forEach(dir => {
@@ -15,10 +17,12 @@ const loadCommands = (Alexa, Discord, Ascii, Chalk, commands, aliases, dirs = ".
             const pull = require(`../${dirs}${dir}/${file}`);
          
             if(pull.name) {
+                // Name Found Repertorie Tableau
                 Alexa.commands.set(pull.name, pull);
-                table.addRow(dir, file, Chalk.green("On"));
+                table.addRow(dir, file, Chalk.green("On / Allumé"));
             } else {
-                table.addRow(dir, file, Chalk.red("Off"));
+                // Else met la commande en OFF
+                table.addRow(dir, file, Chalk.red("Off / Eteint"));
                 continue;
             }
             if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => Alexa.aliases.set(alias, pull.name));

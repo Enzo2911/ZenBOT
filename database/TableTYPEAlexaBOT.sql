@@ -1,3 +1,5 @@
+-- Table TYPE Crée d'abord une db puis les tables s'inséreront tout seul
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";

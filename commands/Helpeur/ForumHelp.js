@@ -15,12 +15,12 @@ module.exports = {
                 { name: prefix + 'ZenForum', value: 'Affice l\'URL du Site & QR Code.', inline: true },
                 { name: prefix + 'ZenCoins', value: 'Explication sur le ZenCoins.', inline: true },
                 { name: '--------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
-                { name: prefix + 'ZenUpgrade', value: 'Affiche les différents grades du site+ les avantages.', inline: true },
-                { name: prefix + 'ZenPartenariat', value: 'Plus d\'info sur un Potentiel Partenariat.', inline: true },
+                { name: prefix + 'ZenUpgrade', value: 'Affiche les différents grades du site + les avantages.', inline: true },
+                { name: prefix + 'ZenPartenariat', value: 'Plus d\'info sur un potentiel partenariat.', inline: true },
                 { name: '----------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
-                { name: prefix + 'ZenShoutbox', value: 'Les règles de la shoutbox du Forum.', inline: true },
+                { name: prefix + 'ZenShoutbox', value: 'Les règles de la Shoutbox du Forum.', inline: true },
                 { name: prefix + 'ZenMarket', value: 'Les règles du Public Market du Forum.', inline: true },
-                { name: prefix + 'ZenPost', value: '**Important** Explication du HIDDEN (Pour partagé sur le site).', inline: false },
+                { name: prefix + 'ZenPost', value: '**Important** Explication du HIDDEN (pour partager sur le site).', inline: false },
                 { name: '----------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
                 { name: prefix + 'AlexaHelp <COMMAND>', value: 'Pour afficher plus d\'information sur la commande que vous souhaité.', inline: false }
             )

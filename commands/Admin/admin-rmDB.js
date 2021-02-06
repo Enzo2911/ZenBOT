@@ -12,7 +12,7 @@ module.exports = {
     aliases: ["admin-rm"],
     name: "admin-remove",
     category: "AdminDB",
-    description: "Permet de supprimé les permission Platinium et Ultimate des utilisateurs de la db",
+    description: "Permet de supprimé les permissions Platiniums et Ultimates et AutoHits des utilisateurs de la db",
     usage: '"<ID DE LA PERSONNE>" // Reaction message : 1 = Platinium // 2 = Ultimate // 3 = AutoHit',
     run: async (Alexa, message, args, prefix, log, admin) => {
         let adminauthorization = admin;

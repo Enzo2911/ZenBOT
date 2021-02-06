@@ -15,7 +15,7 @@ db.connect();
 module.exports = {
     name: "admin-info",
     category: "AdminDB",
-    description: "Affiche les stats de la db // NB Plat / NB Ultimate Ou via l'ID les stats de la personne associé a cette ID",
+    description: "Affiche les stats de la db // NB Plat / NB Ultimate / NB AutoHit Ou via l'ID les stats de la personne associé a cette ID",
     usage: '[ID]',
     run: async (Alexa, message, args, prefix, log, admin) => {
         let adminauthorization = admin;

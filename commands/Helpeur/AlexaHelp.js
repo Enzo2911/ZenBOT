@@ -25,7 +25,7 @@ module.exports = {
         }
         if (cmd.usage) {
             AlexaHelp.addField(`**Usage : \n**`, `${cmd.usage}`)
-                     .setFooter(`Syntaxe syntax: [] = optionnel, "" = Required`)
+                     .setFooter(`Syntaxe : [] = optionnel, "<>" = Required`)
         }
         if (cmd.description) {
             AlexaHelp.addField(`**Description : \n**`, `${cmd.description}`)
@@ -44,14 +44,14 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle('Panel Help Alexa')
             .addFields(
-                { name: prefix + 'AlexaHelp', value: 'Affiche le pannel actuel + si une commande est mentionné affiche les détails et plus de celle ci.', inline: false },
-                { name: prefix + 'AdminHelp', value: 'Affice le pannel help admin.', inline: false},
-                { name: prefix + 'ForumHelp', value: 'Affiche le pannel help du forum.', inline: false},
-                { name: prefix + 'GenHelp', value: 'Affiche le pannel help du generateur.', inline: false},
+                { name: prefix + 'AlexaHelp', value: 'Affiche le panel actuel + si une commande est mentionnée affiche les détails et usages de la commande mentionnée', inline: false },
+                { name: prefix + 'AdminHelp', value: 'Affice le panel Help Admin.', inline: false},
+                { name: prefix + 'ForumHelp', value: 'Affiche le panel Help du Forum.', inline: false},
+                { name: prefix + 'GenHelp', value: 'Affiche le panel Help du Generateur.', inline: false},
             )
             .setTimestamp()
             .setThumbnail(Alexa.user.displayAvatarURL())
-            .setFooter('Use AlexaHelp with \"commande\" name for specific description... Copyright @AlexaBot @2021')
+            .setFooter('Use AlexaHelp with \"commande\" name for specific description ... Copyright @AlexaBot @2021')
         )
         
 /*

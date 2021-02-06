@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports = {
+modUle.exports = {
     name: "genhelp",
     description: "Affiche les differente commanque parlant du Generateur",
     category: "Helpeur",
@@ -12,14 +12,14 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle('Panel Help Generateur')
             .addFields(
-                { name: prefix + 'Gen-Molotov', value: 'Genere un compte MolotovTV LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-SuperU', value: 'Genere un compte Super-U LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-Auchan', value: 'Genere un compte Auchan LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-King365', value: 'Genere un compte King-365LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-Frichti', value: 'Genere un compte Frichti LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-KFC', value: 'Genere un compte KFC LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-DelArte', value: 'Genere un compte Del Arte LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
-                { name: prefix + 'Gen-MyCanal', value: 'Genere un compte MyCanal LIMITE : 5/jours pour les platinium 3/jours pour les ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-Molotov', value: 'Génère un compte MolotovTV LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-SuperU', value: 'Génère un compte Super-U LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-Auchan', value: 'Génère un compte Auchan LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-King365', value: 'Génère un compte King-365LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-Frichti', value: 'Génère un compte Frichti LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-KFC', value: 'Génère un compte KFC LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-DelArte', value: 'Génère un compte Del Arte LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
+                { name: prefix + 'Gen-MyCanal', value: 'Génère un compte MyCanal LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
                 { name: prefix + 'AlexaHelp <COMMAND>', value: 'Pour afficher plus d\'information sur la commande que vous souhaité.', inline: false }
             )
             .setFooter("Copyright @AlexaBot @2021")

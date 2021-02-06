@@ -30,7 +30,6 @@ include_once('./src/verif.php');
                         <option value="mycanal">MyCanal</option>
                     </select>
                     <input type="submit" name="" value="Login">
-                    
                     <?php
                         verif_get();
                     ?>

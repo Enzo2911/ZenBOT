@@ -11,6 +11,10 @@ const fs = require("fs");
 
 let config = require('./settings/config.json');
 
+if(!config) {
+    console.error("Veuillez crée un fichier dans le dossier settings nommé config.json")
+}
+
 if(!config.token) {
     console.error("Token pas inserer. !!");
 } else {
@@ -46,8 +50,9 @@ Alexa.categories = fs.readdirSync("./commands/");
 
 /* Console LAUNCH */
 
+console.clear() 
+
 Alexa.once('ready', () => {
-    // Clear console //
     /* Appel les commandes */
     loadCommands(Alexa, Discord, Ascii, Chalk, Alexa.commands, Alexa.aliases); 
     /* Logs ready console */
@@ -55,7 +60,7 @@ Alexa.once('ready', () => {
     console.log("")
     console.log(Chalk.blue("Log DB :"))
     /* Activité de Alexa */
-    Alexa.user.setActivity("zencommunity.xyz // @mentionmeforhelp", {
+    Alexa.user.setActivity(config.yourbot + " // @mentionmeforhelp", {
         type: "WATCHING",
     })     
 });
@@ -71,7 +76,6 @@ Alexa.on('guildMemberRemove', async member => {
 })
 
 setTimeout(function(){ 
-    console.clear() 
     db.query(`UPDATE registre SET nbgenautohit = 2, nbgenplat = 5, nbgenulti = 3`, async (error) => {
         if (error) throw error;
         console.log("");
@@ -98,10 +102,6 @@ setTimeout(function(){
         }
     })
 }, 8,64e+7);  
-
-setTimeout(function() {
-
-}), 
 
 Alexa.on('message', async message => {
 
@@ -138,7 +138,7 @@ Alexa.on('message', async message => {
     try {
         // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
         if (message.mentions.has(Alexa.user) && !message.content.includes("@everyone") && !message.content.includes("@here")) {
-            return message.reply('Pour connaitre mes commandes tapez \n**__'+ prefix + "AlexaHelp__**") 
+            return message.reply('Pour en apprendre plus sur moi tapez \n**__'+ prefix + "AlexaHelp__**") 
         }
     } catch {
         // Si ont ne la pas mentionné sur le serveur ZenCommunity elle reste timide
