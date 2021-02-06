@@ -39,7 +39,7 @@
 ## WindowsVersion
 
 <p> Une Fois NODE JS installé et le Serveur WEB installé : </p>
-Instruction :
+<p> Instruction : </p>
   
 ```cmd
 Windows R ==> cmd
