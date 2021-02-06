@@ -6,10 +6,10 @@
   - [PreRequis](#prerequis)
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
-   - [Node JS](#NODEJS)
-   - [Etape Suivante](#EtapeSuivante)
-   - [Comment Crée Un BOT](#CommentCreeUnBOT)
-   - [WEB SERVER](#ServerWEB)
+    - [Node JS](#NODEJS)
+    - [Etape Suivante](#EtapeSuivante)
+    - [Comment Crée Un BOT](#CommentCreeUnBOT)
+    - [WEB SERVER](#ServerWEB)
 - [Version Anglais](#US)
 
 ## FR
