@@ -1,10 +1,16 @@
 # AlexaBOT
 
-### Version FR
+## Table of contents
+
+- [Version Francaise](#FR)
+  - [Launch Bot](#lancementbot)
+- [Version Anglais](#US)
+
+## FR
 
 <p>Project Réalisé en 1 semaine</p>
 
-## Launch le bot
+## LancementBot
 
 <p>Pour démarré le bot 3 requis : <br>
   Node JS <br>
@@ -32,4 +38,7 @@ une fois la vérification effectuée allez dans le répertoire où est localisé
 <br> <br>
 tout devrait s'installer si vous rencontrez quelques problèmes pour les modules installés les a la main npm i nomdumodule
 </p>
+
+
+## US
     
