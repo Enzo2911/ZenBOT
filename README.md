@@ -3,8 +3,8 @@
 ## Table of contents
 
 - [Version Francaise](#FR)
-  - [Introduction](#introduction)
-  - [PreRequis](#prerequis)
+  - [Introduction](#introductionFR)
+  - [PreRequis](#prerequisFR)
   - [Installation Linux Version](#LinuxVersion)
   - [Installation Windows Version](#WindowsVersion)
       - [Node JS](#NODEJS)
@@ -15,10 +15,11 @@
         - [Installation de la DB + Config](#Partie1)
         - [Installation du Serveur WEB + Config](#Partie2)
 - [Version Anglais](#US)
+  [Introduction](#introductionUS)
 
 ## FR
 
-## Introduction 
+## IntroductionFR
 
 <p> Bot Réalisé en 1 semaine </p> 
 <table>
@@ -37,7 +38,7 @@
 </table>
 <p> Multiple Commande + Générateur VIA DB My Sql + partie inscription dans la DB automatiquement via requête POST </p>
 
-## PreRequis
+## PreRequisFR
 
 - Node JS 
 - AlexaBot 
@@ -128,5 +129,31 @@ Installation du Serveur WEB + Introduction du site nous permettant de remplir la
 ```
 
 ## US
+
+## IntroductionUS
+
+<p> Bot Made in 1 week </p> 
+<table>
+  <th>
+   Used  Language
+  </th>
+  <td>
+    Javascript 75%
+  </td>
+  <td>
+    PHP / HTML 15%
+  </td>
+  <td>
+    SQL 5% 
+  </td>
+</table>
+<p> Multiple Command + Generator VIA DB My Sql + part registre in the DB automatically with request POST </p>
+
+## PreRequisUS
+
+- Node JS 
+- AlexaBot 
+- Serveur WEB (MySql / Apache2)
+
 
     
