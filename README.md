@@ -9,8 +9,9 @@
 - [Version Anglais](#US)
 
 ## FR
-<p>
+<p> 
 Project Réalisé en 1 semaine 
+  <br>
 Language Utilisé : Javascript 75%
                    PHP / HTML 15%
                    SQL 5% 
