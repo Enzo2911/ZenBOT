@@ -40,6 +40,8 @@
 
 <div align="center">
 Une Fois NODE JS installé et le Serveur WEB installé :
+
+```
 ```js
 Instruction :
 Windows R ==> cmd
