@@ -1,6 +1,6 @@
 # AlexaBOT
 
-## Table of contents
+## Table of Contents
 
 - [Version Francaise](#FR)
   - [Introduction](#introductionFR)
