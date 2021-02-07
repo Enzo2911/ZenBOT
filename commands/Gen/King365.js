@@ -22,7 +22,7 @@ module.exports = {
             if (error) return message.reply("ID Invalide ou ID pas inscrit dans la DB");
             if (results.length === 0) return message.reply(`<@!${message.author.id}> n'est pas inscrit dans la base de données.`);
             if ((results[0].plat === 1) || (results[0].ulti === 1) || (results[0].autohit === 1)) {
-                db.query(`SELECT id, user, pass, capture FROM genking365`, async (error, results2) => {
+                db.query(`SELECT id, user, pass, capture as cap FROM genking365`, async (error, results2) => {
                     if (error) throw error;
                     if (results2[0] !== undefined) {
                         if (results[0].plat === 1) {

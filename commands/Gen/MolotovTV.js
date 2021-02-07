@@ -23,17 +23,18 @@ module.exports = {
             if (error) return message.reply("ID Invalide ou ID pas inscrit dans la DB");
             if (results.length === 0) return message.reply(`<@!${message.author.id}> n'est pas inscrit dans la base de données.`);
             if ((results[0].plat === 1) || (results[0].ulti === 1) || (results[0].autohit === 1)) {
-                db.query(`SELECT id, user, pass, capture FROM genmolotov`, async (error, results2) => {
+                db.query(`SELECT id, user, pass, capture as cap FROM genmolov`, async (error, results2) => {
                     if (error) throw error;
+					// faut verif si jai mis cap partout dans les gens masi la sa va work deja 
                     if (results2[0] !== undefined) {
                         if (results[0].plat === 1) {
-                            //console.log(results[0].nbgenplat)
+                            
                             if (results[0].nbgenplat <= 0) return message.reply("Vous avez trop généré pour aujourd'hui revenez demain.");
                             message.reply("Un compte va vous être envoyé en privé")
                             message.author.send(`Voici le Compte Molotov : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                             console.log("")
                             console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
-                            db.query(`DELETE FROM genmolotov WHERE id = ${results2[0].id}`, async (error) => {
+                            db.query(`DELETE FROM genmolov WHERE id = ${results2[0].id}`, async (error) => {
                                 if (error) throw error;
                             })
                             db.query(`UPDATE registre SET nbgenplat = nbgenplat - 1 WHERE id = ${message.author.id}`, async (error) => {
@@ -45,7 +46,7 @@ module.exports = {
                             message.author.send(`Voici le Compte Molotov : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                             console.log("")
                             console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
-                            db.query(`DELETE FROM genmolotov WHERE id = ${results2[0].id}`, async (error) => {
+                            db.query(`DELETE FROM genmolov WHERE id = ${results2[0].id}`, async (error) => {
                                 if (error) throw error;
                             })
                             db.query(`UPDATE registre SET nbgenulti = nbgenulti - 1 WHERE id = ${message.author.id}`, async (error) => {

@@ -84,19 +84,19 @@ setTimeout(function(){
     db.query(`SELECT id, ultimate as ulti, autohit, DATEDIFF(\`Date Fin Abonnement\`, \`Date Debut Abonnement\`) as restant FROM registre`, async (error, results) => {
         if (error) throw error;
         console.log("")
-        console.log(Chalk.bgRed("Une nouvelle journée commence donc -1 jours pour les abonnement temporaire."))
+        console.log(Chalk.bgRed("Une nouvelle journée commence donc -1 jours pour les abonnements temporaires."))
         if (results[0].restant === 0) {
             if(results[0].ulti !== 0) {
                 db.query(`UPDATE registre SET ultimate = "0" WHERE id = ${results[0].id}`, async(error) => {
                     if (error) throw error;
                     console.log("")
-                    console.log("Un membre vien de perdre sont abonnement ultimate // Nom : " + member.user.tag + " ID : " + member.id)
+                    console.log(Chalk.blue("Un membre vient de perdre son abonnement ultimate // Nom : " + member.user.tag + " ID : " + member.id))
                 })
             } else if(results[0].autohit !== 0) {
                 db.query(`UPDATE registre SET autohit = "0" WHERE id = ${results[0].id}`, async(error) => {
                     if (error) throw error;
                     console.log("")
-                    console.log("Un membre vien de perdre sont abonnement autohit // Nom : " + member.user.tag + " ID : " + member.id)
+                    console.log(Chalk.blue("Un membre vient de perdre son abonnement autohit // Nom : " + member.user.tag + " ID : " + member.id))
                 })
             }
         }
