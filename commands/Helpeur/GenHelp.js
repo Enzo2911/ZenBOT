@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-modUle.exports = {
+module.exports = {
     name: "genhelp",
     description: "Affiche les differente commanque parlant du Generateur",
     category: "Helpeur",
