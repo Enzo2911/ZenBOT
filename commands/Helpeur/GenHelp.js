@@ -12,6 +12,7 @@ module.exports = {
             .setColor('#0099ff')
             .setTitle('Panel Help Generateur')
             .addFields(
+                { name: prefix + 'Gen-Stats', value: 'Montre les stats de tout les gen disponibles actuellement.', inline: true },
                 { name: prefix + 'Gen-Molotov', value: 'Génère un compte MolotovTV LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
                 { name: prefix + 'Gen-SuperU', value: 'Génère un compte Super-U LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: true },
                 { name: prefix + 'Gen-Auchan', value: 'Génère un compte Auchan LIMITE : 5/jours pour les Platiniums 3/jours pour les Ultimates 2/jours pour les autohits.', inline: false },
