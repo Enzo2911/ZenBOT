@@ -36,7 +36,11 @@ const db = mysql.createConnection({
     user     : config.user,
     password : config.pass,
     database : config.db
-});
+});;db.connect(function(error){
+    if(!!error) console.log(error);
+     else console.log('SQL Database Connected!');
+}); 
+module.exports = db;
 
 /* END */
 
