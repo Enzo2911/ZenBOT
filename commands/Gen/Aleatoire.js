@@ -35,7 +35,7 @@ module.exports = {
                             message.author.send(`Voici le Compte Surprise : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                             console.log("")
                             console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
-                            db.query(`DELETE FROM ${choix} WHERE id = ${results2[0].id}`, async (error) => {
+                            db.query(`DELETE FROM ${choix[random]} WHERE id = ${results2[0].id}`, async (error) => {
                                 if (error) throw error;
                             })
                             db.query(`UPDATE registre SET nbgenplat = nbgenplat - 1 WHERE id = ${message.author.id}`, async (error) => {
@@ -47,7 +47,7 @@ module.exports = {
                             message.author.send(`Voici le Compte Surprise : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                             console.log("")
                             console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
-                            db.query(`DELETE FROM ${choix} WHERE id = ${results2[0].id}`, async (error) => {
+                            db.query(`DELETE FROM ${choix[random]} WHERE id = ${results2[0].id}`, async (error) => {
                                 if (error) throw error;
                             })
                             db.query(`UPDATE registre SET nbgenulti = nbgenulti - 1 WHERE id = ${message.author.id}`, async (error) => {
