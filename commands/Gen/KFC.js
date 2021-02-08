@@ -52,6 +52,7 @@ module.exports = {
                             })
                         } else if (results[0].autohit === 1) { 
                             if (results[0].nbgenautohit <= 0) return message.reply("Vous avez trop généré pour aujourd'hui revenez demain.");
+                            message.author.send(`Voici le Compte KFC : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                             message.reply("Un compte va vous être envoyé en privé")
                             console.log("")
                             console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
