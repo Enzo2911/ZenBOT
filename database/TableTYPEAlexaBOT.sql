@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `gendelarte` (
 -- Structure de la table `genauchan`
 --
 
-DROP TABLE IF EXISTS `genauchan`;
-CREATE TABLE IF NOT EXISTS `genauchan` (
+DROP TABLE IF EXISTS `gennordvpn`;
+CREATE TABLE IF NOT EXISTS `gennordvpn` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
@@ -66,6 +66,136 @@ CREATE TABLE IF NOT EXISTS `genauchan` (
 
 DROP TABLE IF EXISTS `genfrichti`;
 CREATE TABLE IF NOT EXISTS `genfrichti` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `gennordvpn`
+--
+
+DROP TABLE IF EXISTS `gennordvpn`;
+CREATE TABLE IF NOT EXISTS `gennordvpn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genyvesrocher`
+--
+
+DROP TABLE IF EXISTS `genyvesrocher`;
+CREATE TABLE IF NOT EXISTS `genyvesrocher` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `gencrunchyroll`
+--
+
+DROP TABLE IF EXISTS `gencrunchyroll`;
+CREATE TABLE IF NOT EXISTS `gencrunchyroll` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genuptobox`
+--
+
+DROP TABLE IF EXISTS `genuptobox`;
+CREATE TABLE IF NOT EXISTS `genuptobox` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genadn`
+--
+
+DROP TABLE IF EXISTS `genadn`;
+CREATE TABLE IF NOT EXISTS `genadn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genespaceup`
+--
+
+DROP TABLE IF EXISTS `genespaceup`;
+CREATE TABLE IF NOT EXISTS `genespaceup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genxsplit`
+--
+
+DROP TABLE IF EXISTS `genxsplit`;
+CREATE TABLE IF NOT EXISTS `genxsplit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `gensalto`
+--
+
+DROP TABLE IF EXISTS `gensalto`;
+CREATE TABLE IF NOT EXISTS `gensalto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genhulu`
+--
+
+DROP TABLE IF EXISTS `genhulu`;
+CREATE TABLE IF NOT EXISTS `genhulu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Structure de la table `genorangetv`
+--
+
+DROP TABLE IF EXISTS `genorangetv`;
+CREATE TABLE IF NOT EXISTS `genorangetv` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
