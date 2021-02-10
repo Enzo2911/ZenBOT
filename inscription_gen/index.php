@@ -28,6 +28,30 @@ include_once('./src/verif.php');
                         <option value="kfc">KFC</option>
                         <option value="delarte">Del Arte</option>
                         <option value="mycanal">MyCanal</option>
+                        <option value="nordvpn">NordVPN</option>
+                        <option value="yvesrocher">YvesRocher</option>
+                        <option value="crunchyroll">CrunchyRoll</option>
+                        <option value="uptobox">Uptobox</option>
+                        <option value="espaceup">MonEspaceUp</option>
+                        <option value="adn">ADN</option>
+                        <option value="xsplit">Xsplit</option>
+                        <option value="salto">Salto</option>
+                        <option value="hulu">Hulu</option>
+                        <option value="orangetv">OrangeTV</option>
+                        <option value="accordhotel">AccordHotel</option>
+                        <option value="gosport">GoSport</option>
+                        <option value="hma">HMA</option>
+                        <option value="iban">IBAN</option>
+                        <option value="mega">Mega</option>
+                        <option value="napster">Napster</option>
+                        <option value="nitrado">Nitrado</option>
+                        <option value="pornhub">PornHub</option>
+                        <option value="pornportal">PornPortal</option>
+                        <option value="telefoot">Telefoot</option>
+                        <option value="qobuz">Qobuz</option>
+                        <option value="pornvelib">Velib</option>
+                        <option value="casino">Casino</option>
+                        <option value="brioche">BriocheDoree</option>
                     </select>
                     <input type="submit" name="" value="Login">
                     <?php
