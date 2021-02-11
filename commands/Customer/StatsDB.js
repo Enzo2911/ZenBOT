@@ -208,9 +208,171 @@ module.exports = {
                     } else {
                         yvesrocher = results[0].nbstockyvesrocher;
                     }
-                    message.author.send('Stats YvesRocher : ' + `${yvesrocher}`)
-                    message.author.send('Version BETA des stats DB sorry du spam pas trouvé d\'autre solution pour l\'instant')
+                    message.author.send('Stats YvesRocher : ' + `${yvesrocher}`)                    
                 
+                })
+				//COUPE 4
+				// AccordHotel 
+                db.query(`SELECT count(*) as nbstockaccordhotel from genaccordhotel`, async (error, results) => {
+                    if (error) throw error;
+                    let accordhotel;
+                    if (results[0].nbstockaccordhotel === 0) {
+                        accordhotel = "Out Of Stock";
+                    } else {
+                        accordhotel = results[0].nbstockaccordhotel;
+                    }
+                    message.author.send('Stats Accord Hotel : ' + `${accordhotel}`)
+                })
+
+                // Brioche
+                db.query(`SELECT count(*) as nbstockbrioche from genbrioche`, async (error, results) => {
+                    if (error) throw error;
+                    let brioche;
+                    if (results[0].nbstockbrioche === 0) {
+                        brioche = "Out Of Stock";
+                    } else {
+                        brioche = results[0].nbstockbrioche;
+                    }
+                    message.author.send('Stats Brioche : ' + `${brioche}`)
+                })
+                // CRUNCHYROLL
+                db.query(`SELECT count(*) as nbstockcasino from gencasino`, async (error, results) => {
+                    if (error) throw error;
+                    let casino;
+                    if (results[0].nbstockcasino === 0) {
+                        casino = "Out Of Stock";
+                    } else {
+                        casino = results[0].nbstockcasino;
+                    }
+                    message.author.send('Stats Casino : ' + `${casino}`)
+                })
+                // GoSport
+                db.query(`SELECT count(*) as nbstockgosport from gengosport`, async (error, results) => {
+                    if (error) throw error;
+                    let gosport;
+                    if (results[0].nbstockgosport === 0) {
+                        gosport = "Out Of Stock";
+                    } else {
+                        gosport = results[0].nbstockgosport;
+                    }
+                    message.author.send('Stats GoSport : ' + `${gosport}`)
+                })
+				//COUPE 5
+				// HMA 
+                db.query(`SELECT count(*) as nbstockhma from genhma`, async (error, results) => {
+                    if (error) throw error;
+                    let hma;
+                    if (results[0].nbstockhma === 0) {
+                        hma = "Out Of Stock";
+                    } else {
+                        hma = results[0].nbstockhma;
+                    }
+                    message.author.send('Stats HMA : ' + `${hma}`)
+                })
+
+                // Hulu
+                db.query(`SELECT count(*) as nbstockhulu from genhulu`, async (error, results) => {
+                    if (error) throw error;
+                    let hulu;
+                    if (results[0].nbstockhulu === 0) {
+                        hulu = "Out Of Stock";
+                    } else {
+                        hulu = results[0].nbstockhulu;
+                    }
+                    message.author.send('Stats Hulu : ' + `${hulu}`)
+                })
+                // Iban
+                db.query(`SELECT count(*) as nbstockiban from geniban`, async (error, results) => {
+                    if (error) throw error;
+                    let iban;
+                    if (results[0].nbstockiban === 0) {
+                        iban = "Out Of Stock";
+                    } else {
+                        iban = results[0].nbstockiban;
+                    }
+                    message.author.send('Stats Iban : ' + `${iban}`)
+                })
+                // Mega
+                db.query(`SELECT count(*) as nbstockmega from genmega`, async (error, results) => {
+                    if (error) throw error;
+                    let mega;
+                    if (results[0].nbstockmega === 0) {
+                        mega = "Out Of Stock";
+                    } else {
+                        mega = results[0].nbstockmega;
+                    }
+                    message.author.send('Stats Mega : ' + `${mega}`)
+                })
+				//COUPE 6
+				// Napster 
+                db.query(`SELECT count(*) as nbstocknapster from gennapster`, async (error, results) => {
+                    if (error) throw error;
+                    let napster;
+                    if (results[0].nbstocknapster === 0) {
+                        napster = "Out Of Stock";
+                    } else {
+                        napster = results[0].nbstocknapster;
+                    }
+                    message.author.send('Stats Napster : ' + `${napster}`)
+                })
+
+                // Nitrado
+                db.query(`SELECT count(*) as nbstocknitrado from gennitrado`, async (error, results) => {
+                    if (error) throw error;
+                    let nitrado;
+                    if (results[0].nbstocknitrado === 0) {
+                        nitrado = "Out Of Stock";
+                    } else {
+                        nitrado = results[0].nbstocknitrado;
+                    }
+                    message.author.send('Stats Nitrado : ' + `${nitrado}`)
+                })
+                // PornHub
+                db.query(`SELECT count(*) as nbstockpornhub from genpornhub`, async (error, results) => {
+                    if (error) throw error;
+                    let pornhub;
+                    if (results[0].nbstockpornhub === 0) {
+                        pornhub = "Out Of Stock";
+                    } else {
+                        pornhub = results[0].nbstockpornhub;
+                    }
+                    message.author.send('Stats PornHub : ' + `${pornhub}`)
+                })
+                // PornPortal
+                db.query(`SELECT count(*) as nbstockpornportal from genpornportal`, async (error, results) => {
+                    if (error) throw error;
+                    let pornportal;
+                    if (results[0].nbstockpornportal === 0) {
+                        pornportal = "Out Of Stock";
+                    } else {
+                        pornportal = results[0].nbstockpornportal;
+                    }
+                    message.author.send('Stats PornPortal : ' + `${pornportal}`)
+                })
+				//COUPE 7
+				// Qobuz 
+                db.query(`SELECT count(*) as nbstockqobuz from genqobuz`, async (error, results) => {
+                    if (error) throw error;
+                    let qobuz;
+                    if (results[0].nbstockqobuz === 0) {
+                        qobuz = "Out Of Stock";
+                    } else {
+                        qobuz = results[0].nbstockqobuz;
+                    }
+                    message.author.send('Stats Qobuz : ' + `${qobuz}`)
+                })
+
+                // Telefoot
+                db.query(`SELECT count(*) as nbstocktelefoot from gentelefoot`, async (error, results) => {
+                    if (error) throw error;
+                    let telefoot;
+                    if (results[0].nbstocktelefoot === 0) {
+                        telefoot = "Out Of Stock";
+                    } else {
+                        telefoot = results[0].nbstocktelefoot;
+                    }
+                    message.author.send('Stats Telefoot : ' + `${telefoot}`)
+					message.author.send('Version BETA des stats DB sorry du spam pas trouvé d\'autre solution pour l\'instant')
                 })
                 // COUPE 4 EN 1
             } else {

@@ -13,10 +13,9 @@ const db = mysql.createConnection({
 db.connect();
 
 module.exports = {
-    aliases: ["gen-mltv"],
-    name: "gen-molotov",
+    name: "gen-surprise",
     category: "GenerateurCompte",
-    description: "Permet de généré un Compte Molotov si vous êtes Platinium ou Ultimate ou AutoHit",
+    description: "Permet de généré un Compte Aleatoire (Surprise) si vous êtes Platinium ou Ultimate ou AutoHit",
     usage: '[Doit avoir un abonnement Platinium ou Ultimate ou AutoHit]',
     run: async (Alexa, message, args, prefix, log) => {
         if (message.channel.id !== config.channel) {
@@ -27,18 +26,21 @@ module.exports = {
                 if (error) return message.reply("ID Invalide ou ID pas inscrit dans la DB");
                 if (results.length === 0) return message.reply(`<@!${message.author.id}> n'est pas inscrit dans la base de données.`);
                 if ((results[0].plat === 1) || (results[0].ulti === 1) || (results[0].autohit === 1)) {
-                    db.query(`SELECT id, user, pass, capture as cap FROM genmolov`, async (error, results2) => {
+                    let choix = config.gendispo;
+                    let random = Math.floor(Math.random() * choix.length);
+                    let choixfixe = choix[random];
+                    let req = `SELECT id, user, pass, capture as cap FROM ${choixfixe}`;
+                    db.query(req, async (error, results2) => {
                         if (error) throw error;
-                        // faut verif si jai mis cap partout dans les gens masi la sa va work deja 
                         if (results2[0] !== undefined) {
                             if (results[0].plat === 1) {
-
+                                //console.log(results[0].nbgenplat)
                                 if (results[0].nbgenplat <= 0) return message.reply("Vous avez trop généré pour aujourd'hui revenez demain.");
                                 message.reply("Un compte va vous être envoyé en privé")
-                                message.author.send(`Voici le Compte Molotov : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
+                                message.author.send(`Voici le Compte ${choixfixe.replace("gen", "")} : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                                 console.log("")
                                 console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
-                                db.query(`DELETE FROM genmolov WHERE id = ${results2[0].id}`, async (error) => {
+                                db.query(`DELETE FROM ${choixfixe} WHERE id = ${results2[0].id}`, async (error) => {
                                     if (error) throw error;
                                 })
                                 db.query(`UPDATE registre SET nbgenplat = nbgenplat - 1 WHERE id = ${message.author.id}`, async (error) => {
@@ -47,10 +49,10 @@ module.exports = {
                             } else if (results[0].ulti === 1) {
                                 if (results[0].nbgenulti <= 0) return message.reply("Vous avez trop généré pour aujourd'hui revenez demain.");
                                 message.reply("Un compte va vous être envoyé en privé")
-                                message.author.send(`Voici le Compte Molotov : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
+                                message.author.send(`Voici le Compte ${choixfixe.replace("gen", "")} : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                                 console.log("")
                                 console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
-                                db.query(`DELETE FROM genmolov WHERE id = ${results2[0].id}`, async (error) => {
+                                db.query(`DELETE FROM ${choixfixe} WHERE id = ${results2[0].id}`, async (error) => {
                                     if (error) throw error;
                                 })
                                 db.query(`UPDATE registre SET nbgenulti = nbgenulti - 1 WHERE id = ${message.author.id}`, async (error) => {
@@ -59,7 +61,7 @@ module.exports = {
                             } else if (results[0].autohit === 1) {
                                 if (results[0].nbgenautohit <= 0) return message.reply("Vous avez trop généré pour aujourd'hui revenez demain.");
                                 message.reply("Un compte va vous être envoyé en privé")
-                                message.author.send(`Voici le Compte Molotov : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
+                                message.author.send(`Voici le Compte ${choixfixe.replace("gen", "")} : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`)
                                 console.log("")
                                 console.log(chalk.bgYellow(`Compte Envoyé a : ${message.author.username} // ID : ${message.author.id} // Compte en question : ${results2[0].user}:${results2[0].pass} // Capture :  ${results2[0].cap}`))
                                 db.query(`UPDATE registre SET nbgenautohit = nbgenautohit - 1 WHERE id = ${message.author.id}`, async (error) => {
@@ -69,7 +71,7 @@ module.exports = {
                                 message.reply("Tes obligatoirement un admin qui c'est mis les deux perms donc NTM")
                             }
                         } else {
-                            message.reply("Désolé il n'y a plus de Compte Molotov");
+                            message.reply("Désolé il n'y a plus de Compte dans la db suprise que vous avez tenté de générer veuillez retenté.");
                         }
                     })
                 } else {
@@ -79,5 +81,3 @@ module.exports = {
         }
     }
 }
-
-

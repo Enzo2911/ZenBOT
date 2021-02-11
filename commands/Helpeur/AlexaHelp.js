@@ -47,7 +47,8 @@ module.exports = {
                 { name: prefix + 'AlexaHelp', value: 'Affiche le panel actuel + si une commande est mentionnée affiche les détails et usages de la commande mentionnée', inline: false },
                 { name: prefix + 'AdminHelp', value: 'Affice le panel Help Admin.', inline: false},
                 { name: prefix + 'ForumHelp', value: 'Affiche le panel Help du Forum.', inline: false},
-                { name: prefix + 'GenHelp', value: 'Affiche le panel Help du Generateur.', inline: false},
+                { name: prefix + 'GenHelp', value: 'Affiche le panel Page 1 Help du Generateur.', inline: false},
+                { name: prefix + 'GenHelp2', value: 'Affiche le panel Page 2 Help du Generateur.', inline: false},
             )
             .setTimestamp()
             .setThumbnail(Alexa.user.displayAvatarURL())
