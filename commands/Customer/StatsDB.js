@@ -55,16 +55,16 @@ module.exports = {
                     }
                     message.author.send('Stats Crunchyroll : ' + `${crunchyroll}`)
                 })
-                // kfc
-                db.query(`SELECT count(*) as nbstockkfc from genkfc`, async (error, results) => {
+                // DELARTE
+                db.query(`SELECT count(*) as nbstockdelarte from gendelarte`, async (error, results) => {
                     if (error) throw error;
-                    let kfc;
-                    if (results[0].nbstockkfc === 0) {
-                        kfc = "Out Of Stock";
+                    let delarte;
+                    if (results[0].nbstockdelarte === 0) {
+                        delarte = "Out Of Stock";
                     } else {
-                        kfc = results[0].nbstockkfc;
+                        delarte = results[0].nbstockdelarte;
                     }
-                    message.author.send('Stats Del Arte : ' + `${kfc}`)
+                    message.author.send('Stats Del Arte : ' + `${delarte}`)
                 })
                 // COUPE 1
                 // ESPACE UP

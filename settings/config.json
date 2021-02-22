@@ -2,11 +2,11 @@
     "yourbot": "AlexaBot",
     "prefix": "?",
     "host": "localhost",
-    "user": "root",
-    "pass": "",
-    "db": "zenbot",
-    "logdb": "806894760324890684",
-    "token": "ODA1NTU1Mjg2ODQ0MjQzOTc4.YBcl0g.mBZQ7awpxTaMYjqvh9KHFyQSHTM",
+    "user": "zenbot",
+    "pass": "rYQHzkoj0R5oIZU6",
+    "db": "zenzenbot",
+    "logdb": "806976481942437919",
+    "token": "ODA3OTgyMjU1NDA5NzI1NDcw.YB_6HQ.sEtd7Do4vHFSabMi5M9ExPCqzmI",
     "gendispo": [
         "genaccordhotel",
         "genadn",
@@ -46,5 +46,5 @@
         "799168976668065852",
         "701480495690547351"
     ],
-    "channel": "809498265099305031"
+    "channel": "808361071714500629"
 }

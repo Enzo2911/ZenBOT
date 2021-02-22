@@ -71,6 +71,7 @@ module.exports = {
                     { name: prefix + 'Gen-Hulu', value: 'Hulu.', inline: true },
                     { name: prefix + 'Gen-Telefoot', value: 'Telefoot.', inline: true },
                     { name: prefix + 'Gen-OrangeTV', value: 'OrangeTV.', inline: true },
+                    { name: prefix + 'Gen-Lequipe', value: 'Lequipe.', inline: true },
                     //COUPE
                     { name: '--------------------------------------------------------', value: 'MUSIQUE', inline: false },
                     { name: prefix + 'Gen-Qobuz', value: 'Qobuz.', inline: true },
