@@ -2,11 +2,11 @@
     "yourbot": "AlexaBot",
     "prefix": "?",
     "host": "localhost",
-    "user": "zenbot",
+    "user": "root",
     "pass": "",
-    "db": "zenzenbot",
-    "logdb": "806976481942437919",
-    "token": "ODA3OTgyMjU1NDA5NzI1NDcw.YB_6HQ.sEtd7Do4vHFSabMi5M9ExPCqzmI",
+    "db": "zenbot",
+    "logdb": "A MODIF",
+    "token": "A MODIF",
     "gendispo": [
         "genaccordhotel",
         "genadn",
@@ -46,5 +46,5 @@
         "799168976668065852",
         "701480495690547351"
     ],
-    "channel": "808361071714500629"
+    "channel": "A MODIF"
 }

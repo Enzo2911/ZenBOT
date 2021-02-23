@@ -1,3 +1,4 @@
+-- Pour crée la database entré ceci : CREATE DATABASE zenbot DEFAULT CHARSET = utf8mb4 DEFAULT COLLATE = utf8mb4_unicode_ci; --
 -- Table TYPE Crée d'abord une db puis les tables s'inséreront tout seul
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -21,14 +22,14 @@ CREATE TABLE IF NOT EXISTS `registre` (
   `Date Inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Date Debut Abonnement` datetime DEFAULT NULL,
   `Date Fin Abonnement` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `registre`
 --
 
 INSERT INTO `registre` (`id`, `user`, `autohit`, `ultimate`, `platinium`, `nbgenplat`, `nbgenulti`, `nbgenautohit`, `Date Inscription`, `Date Debut Abonnement`, `Date Fin Abonnement`) VALUES
-('805933660729638913', 'Sarah Jeffrey', 0, 0, 0, 5, 3, 2, '2021-02-06 16:34:30', NULL, NULL);
+('805933660729638913', 'Sarah Jeffrey', 1, 1, 1, 99, 99, 2, '2021-02-06 16:34:30', NULL, NULL);
 COMMIT;
 
 -- --------------------------------------------------------
@@ -40,11 +41,11 @@ COMMIT;
 DROP TABLE IF EXISTS `gendelarte`;
 CREATE TABLE IF NOT EXISTS `gendelarte` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 -- --------------------------------------------------------
 
 --
@@ -54,11 +55,11 @@ CREATE TABLE IF NOT EXISTS `gendelarte` (
 DROP TABLE IF EXISTS `genaccordhotel`;
 CREATE TABLE IF NOT EXISTS `genaccordhotel` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gengosport`
@@ -67,11 +68,11 @@ CREATE TABLE IF NOT EXISTS `genaccordhotel` (
 DROP TABLE IF EXISTS `gengosport`;
 CREATE TABLE IF NOT EXISTS `gengosport` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genhma`
@@ -80,11 +81,11 @@ CREATE TABLE IF NOT EXISTS `gengosport` (
 DROP TABLE IF EXISTS `genhma`;
 CREATE TABLE IF NOT EXISTS `genhma` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `geniban`
@@ -93,11 +94,11 @@ CREATE TABLE IF NOT EXISTS `genhma` (
 DROP TABLE IF EXISTS `geniban`;
 CREATE TABLE IF NOT EXISTS `geniban` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genmega`
@@ -106,11 +107,11 @@ CREATE TABLE IF NOT EXISTS `geniban` (
 DROP TABLE IF EXISTS `genmega`;
 CREATE TABLE IF NOT EXISTS `genmega` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gennapster`
@@ -119,11 +120,11 @@ CREATE TABLE IF NOT EXISTS `genmega` (
 DROP TABLE IF EXISTS `gennapster`;
 CREATE TABLE IF NOT EXISTS `gennapster` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gennitrado`
@@ -132,11 +133,11 @@ CREATE TABLE IF NOT EXISTS `gennapster` (
 DROP TABLE IF EXISTS `gennitrado`;
 CREATE TABLE IF NOT EXISTS `gennitrado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genpornhub`
@@ -145,11 +146,11 @@ CREATE TABLE IF NOT EXISTS `gennitrado` (
 DROP TABLE IF EXISTS `genpornhub`;
 CREATE TABLE IF NOT EXISTS `genpornhub` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genpornportal`
@@ -158,11 +159,11 @@ CREATE TABLE IF NOT EXISTS `genpornhub` (
 DROP TABLE IF EXISTS `genpornportal`;
 CREATE TABLE IF NOT EXISTS `genpornportal` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genqobuz`
@@ -171,11 +172,11 @@ CREATE TABLE IF NOT EXISTS `genpornportal` (
 DROP TABLE IF EXISTS `genqobuz`;
 CREATE TABLE IF NOT EXISTS `genqobuz` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gentelefoot`
@@ -184,11 +185,11 @@ CREATE TABLE IF NOT EXISTS `genqobuz` (
 DROP TABLE IF EXISTS `gentelefoot`;
 CREATE TABLE IF NOT EXISTS `gentelefoot` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genvelib`
@@ -197,11 +198,11 @@ CREATE TABLE IF NOT EXISTS `gentelefoot` (
 DROP TABLE IF EXISTS `genvelib`;
 CREATE TABLE IF NOT EXISTS `genvelib` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genbrioche`
@@ -210,11 +211,11 @@ CREATE TABLE IF NOT EXISTS `genvelib` (
 DROP TABLE IF EXISTS `genbrioche`;
 CREATE TABLE IF NOT EXISTS `genbrioche` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gencasino`
@@ -223,24 +224,24 @@ CREATE TABLE IF NOT EXISTS `genbrioche` (
 DROP TABLE IF EXISTS `gencasino`;
 CREATE TABLE IF NOT EXISTS `gencasino` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genauchan`
 --
 
-DROP TABLE IF EXISTS `gennordvpn`;
-CREATE TABLE IF NOT EXISTS `gennordvpn` (
+DROP TABLE IF EXISTS `genauchan`;
+CREATE TABLE IF NOT EXISTS `genauchan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genfrichti`
@@ -249,11 +250,11 @@ CREATE TABLE IF NOT EXISTS `gennordvpn` (
 DROP TABLE IF EXISTS `genfrichti`;
 CREATE TABLE IF NOT EXISTS `genfrichti` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gennordvpn`
@@ -262,11 +263,11 @@ CREATE TABLE IF NOT EXISTS `genfrichti` (
 DROP TABLE IF EXISTS `gennordvpn`;
 CREATE TABLE IF NOT EXISTS `gennordvpn` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genyvesrocher`
@@ -275,11 +276,11 @@ CREATE TABLE IF NOT EXISTS `gennordvpn` (
 DROP TABLE IF EXISTS `genyvesrocher`;
 CREATE TABLE IF NOT EXISTS `genyvesrocher` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gencrunchyroll`
@@ -288,11 +289,11 @@ CREATE TABLE IF NOT EXISTS `genyvesrocher` (
 DROP TABLE IF EXISTS `gencrunchyroll`;
 CREATE TABLE IF NOT EXISTS `gencrunchyroll` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genuptobox`
@@ -301,11 +302,11 @@ CREATE TABLE IF NOT EXISTS `gencrunchyroll` (
 DROP TABLE IF EXISTS `genuptobox`;
 CREATE TABLE IF NOT EXISTS `genuptobox` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genadn`
@@ -314,11 +315,11 @@ CREATE TABLE IF NOT EXISTS `genuptobox` (
 DROP TABLE IF EXISTS `genadn`;
 CREATE TABLE IF NOT EXISTS `genadn` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genespaceup`
@@ -327,11 +328,11 @@ CREATE TABLE IF NOT EXISTS `genadn` (
 DROP TABLE IF EXISTS `genespaceup`;
 CREATE TABLE IF NOT EXISTS `genespaceup` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genxsplit`
@@ -340,11 +341,11 @@ CREATE TABLE IF NOT EXISTS `genespaceup` (
 DROP TABLE IF EXISTS `genxsplit`;
 CREATE TABLE IF NOT EXISTS `genxsplit` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gensalto`
@@ -353,11 +354,11 @@ CREATE TABLE IF NOT EXISTS `genxsplit` (
 DROP TABLE IF EXISTS `gensalto`;
 CREATE TABLE IF NOT EXISTS `gensalto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genhulu`
@@ -366,11 +367,11 @@ CREATE TABLE IF NOT EXISTS `gensalto` (
 DROP TABLE IF EXISTS `genhulu`;
 CREATE TABLE IF NOT EXISTS `genhulu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genorangetv`
@@ -379,11 +380,11 @@ CREATE TABLE IF NOT EXISTS `genhulu` (
 DROP TABLE IF EXISTS `genorangetv`;
 CREATE TABLE IF NOT EXISTS `genorangetv` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genkfc`
@@ -392,11 +393,11 @@ CREATE TABLE IF NOT EXISTS `genorangetv` (
 DROP TABLE IF EXISTS `genkfc`;
 CREATE TABLE IF NOT EXISTS `genkfc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 --
@@ -406,11 +407,11 @@ CREATE TABLE IF NOT EXISTS `genkfc` (
 DROP TABLE IF EXISTS `genking365`;
 CREATE TABLE IF NOT EXISTS `genking365` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genmolov`
@@ -419,11 +420,11 @@ CREATE TABLE IF NOT EXISTS `genking365` (
 DROP TABLE IF EXISTS `genmolov`;
 CREATE TABLE IF NOT EXISTS `genmolov` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `genmycanal`
@@ -432,11 +433,11 @@ CREATE TABLE IF NOT EXISTS `genmolov` (
 DROP TABLE IF EXISTS `genmycanal`;
 CREATE TABLE IF NOT EXISTS `genmycanal` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 --
 -- Structure de la table `gensuperu`
@@ -445,10 +446,10 @@ CREATE TABLE IF NOT EXISTS `genmycanal` (
 DROP TABLE IF EXISTS `gensuperu`;
 CREATE TABLE IF NOT EXISTS `gensuperu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `pass` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `capture` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- A crée dans une DBB déja existante puis config le config.json pour changé les infos de la db et tout..

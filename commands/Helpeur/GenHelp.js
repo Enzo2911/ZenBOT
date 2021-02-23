@@ -2,6 +2,7 @@ const { MessageEmbed, Collection } = require("discord.js");
 
 module.exports = {
     name: "genhelp",
+    aliases: ["gen", "gen-help"],
     description: "Affiche les differente commanque parlant du Generateur",
     category: "Helpeur",
     description: "Panel qui retourne des informations sur les divers commandes du bot parlant du Generateur.",

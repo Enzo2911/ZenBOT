@@ -2,7 +2,7 @@ const {MessageEmbed} = require("discord.js");
 
 module.exports = {
     name: "adminhelp",
-    aliases: ["admin"],
+    aliases: ["admin", "admin-help"],
     description: "Affiche les differente commanque ADMIN",
     category: "Helpeur",
     description: "Panel qui retourne des informations admin sur les divers commandes du bot.",
@@ -21,6 +21,7 @@ module.exports = {
             { name: '--------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
             { name: prefix + 'Admin-add', value: 'Ajoute un utilisateur via son id dans la bdd en tant qu\'Ultimate ou Platinum ou AutoHits', inline: true },
             { name: prefix + 'Admin-remove', value: 'Enleve un utilisateur via sont id dans la bdd en tant qu\'Ultimate ou Platinum ou AutoHits', inline: true }, 
+            { name: prefix + 'Admin-resetdb', value: 'Supprime les données d\'une DB ou de toute les db (gen) (DANGEREUX PAS DE RETOUR ARRIERE POSSIBLE)', inline: true },
             { name: prefix + 'Admin-info', value: 'Affiche les statistiques de la table (registre) // Ou affichent les infos d\'un ID', inline: true },
             { name: '----------------------------------------------------------', value: '--------------------------------------------------------', inline: false },
             { name: prefix + 'AlexaHelp <COMMAND>', value: 'Pour afficher plus d\'informations sur la commande que vous souhaitez.', inline: false }
