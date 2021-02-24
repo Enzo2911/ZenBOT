@@ -15,6 +15,8 @@
       - [WEB SERVER](#ServerWEB)
         - [Installation de la DB + Config](#Partie1)
         - [Installation du Serveur WEB + Config](#Partie2)
+      - [Personalisation](#Personalisation)
+        - [Ajout de module Gen](#AjoutModuleGen)
 - [Version Anglais](#US)
   - [Introduction](#introductionUS)
   - [PreRequis](#prerequisUS)
@@ -28,6 +30,8 @@
       - [WEB SERVER](#WEBServer)
         - [Installation of the DB + Config](#Part1)
         - [Installation of Serveur WEB + Config](#Part2)
+      - [Personalization](#Personalization)
+        - [Added Gen module](#AddModuleGen)
 
 ## FR
 
@@ -254,4 +258,25 @@ Installation of the WEB Server + Introduction of the site allowing us to fill th
     "pass": "",
     "db": "zenbot"
 }]
+```
+
+#Personalization
+
+### AddModuleGen
+
+Soo I wanted to diversify the project by adding some python in the heap.
+
+just openned it wit python3 Write the name of the new module + aliase if you want and after its make the new gen automaticly you don't have to make anything just after this is done you need to add 
+in inscription_gen a new line in index.php <option value="Name Of Your Module">Same Here</option> and create a new table 
+<br>
+Like this
+```
+DROP TABLE IF EXISTS `genNAMEHERE`;
+CREATE TABLE IF NOT EXISTS `genNAMEHERE` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
