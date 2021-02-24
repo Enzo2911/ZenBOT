@@ -146,6 +146,28 @@ Installation du Serveur WEB + Introduction du site nous permettant de remplir la
 }]
 ```
 
+## Personalisation
+
+### AjoutModuleGen
+
+Je voulais donc diversifier le projet en ajoutant du python dans le tas.
+
+Je l'ai juste ouvert avec python3 Ecrivez le nom du nouveau module + alias si vous voulez et après sa création le nouveau générateur automatiquement vous n'avez pas à faire quoi que ce soit, juste après cela vous devez ajouter 
+dans inscription_gen une nouvelle ligne dans index.php <option value="Name Of Your Module">Aussi ici</option> et créer un nouveau tableau 
+
+Comme ceci
+```
+DROP TABLE IF EXISTS `genNAMEHERE`;
+CREATE TABLE IF NOT EXISTS `genNAMEHERE` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pass` varchar(30) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `capture` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+
 ## US
 
 ## IntroductionUS
@@ -260,7 +282,7 @@ Installation of the WEB Server + Introduction of the site allowing us to fill th
 }]
 ```
 
-#Personalization
+## Personalization
 
 ### AddModuleGen
 
