@@ -68,14 +68,14 @@ Alexa.once('ready', () => {
     console.log("")
     console.log(Chalk.blue("Log DB :"))
     /* Activité de Alexa */
-    Alexa.user.setActivity(config.yourbot + " // @mentionmeforhelp", {
+    Alexa.user.setActivity(config.yourbot + " /// @mentionmeforhelp", {
         type: "WATCHING",
     })
 });
 
 Alexa.on('guildMemberRemove', async member => {
     let log = config.logdb;
-    db.query(`DELETE FROM registre WHERE id = ${member.id}`, async (error, results) => {
+    db.query(`DELETE FROM registre WHERE id = ${member.id}`, async (error) => {
         if (error) throw error;
         if (!error) {
             Alexa.channels.cache.get(log).send("Une personne viens de partir du serveur je l'ai donc supprimé de la base de données \n```Nom : " + member.user.tag + "\nID : " + member.id + "```")
@@ -115,26 +115,26 @@ setTimeout(function () {
 
 Alexa.on('message', async message => {
 
-    // Log DB // Met tout sa au four
+    /// Log DB /// Met tout sa au four
     let log = config.logdb;
-    // Ecrire une requete sql
+    /// Ecrire une requete sql
     let req;
-    // Alexa est un peu fainéant elle reduit message.content en msg
+    /// Alexa est un peu fainéant elle reduit message.content en msg
     let msg = message.content;
-    // raccourci du prefix du a une erreur dans mon load export (maniere de fixe) pour appele le prefix
+    /// raccourci du prefix du a une erreur dans mon load export (maniere de fixe) pour appele le prefix
     let prefix = config.prefix;
-    // raccourci de lacces restrint admin 
+    /// raccourci de lacces restrint admin 
     let admin = config.adminconfirmer;
-    // Alexa est un peu timide lorsqu'il faut discuté avec d'autre bot (H&F)
+    /// Alexa est un peu timide lorsqu'il faut discuté avec d'autre bot (H&F)
     if (message.author.bot) return;
-    // Alexa aime pas lorsqu'ont parle en privé avec elle
+    /// Alexa aime pas lorsqu'ont parle en privé avec elle
     if (message.channel.type == "dm") return;
-    // Si la personne == pas enregistré dans la dbb alors Alexa le fait
+    /// Si la personne == pas enregistré dans la dbb alors Alexa le fait
     db.query(`SELECT id, user FROM registre WHERE id = ${message.author.id}`, async (error, results) => {
         if (error) throw error;
         if (results.length === 0) {
-            //let time = new Date().toISOString().slice(0,19).replace("T", " ");
-            //console.log(time);
+            ///let time = new Date().toISOString().slice(0,19).replace("T", " ");
+            ///console.log(time);
             var encodeuser = iconv.encode(message.author.username, 'utf8');
             Alexa.channels.cache.get(log).send("Une nouvelle personne va être entré dans la base de données. \n```Nom : " + message.author.username + "```\n```ID : " + message.author.id + "```")
             req = `INSERT INTO registre (id, user, autohit, ultimate, platinium, \`Date Inscription\`) VALUES (${message.author.id}, "${encodeuser}", 0, 0, 0, CURRENT_TIMESTAMP())`
@@ -149,29 +149,29 @@ Alexa.on('message', async message => {
     });
 
     try {
-        // Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
+        /// Si ont mentionne Alexa elle te répondra lorsque tu la mentionne sur le serveur officiel de ZenCommunity.
         if (message.mentions.has(Alexa.user) && !message.content.includes("@everyone") && !message.content.includes("@here")) {
             return message.reply('Pour en apprendre plus sur moi tapez \n**__' + prefix + "AlexaHelp__**")
         }
     } catch {
-        // Si ont ne la pas mentionné sur le serveur ZenCommunity elle reste timide
+        /// Si ont ne la pas mentionné sur le serveur ZenCommunity elle reste timide
         return;
     };
 
 
-    // si la commande ne commence pas par le prefix definie.
+    /// si la commande ne commence pas par le prefix definie.
     if (!message.content.startsWith(prefix)) return;
-    // args = message commence par le prefix == nombre de caractère + enleve les espace et sépare en capturant ++
+    /// args = message commence par le prefix == nombre de caractère + enleve les espace et sépare en capturant ++
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    // enleve le prefix et transforme la commande écrite en minuscule.
+    /// enleve le prefix et transforme la commande écrite en minuscule.
     const cmd = args.shift().toLowerCase();
-    // Alexa verifie que la commande n'est pas null
+    /// Alexa verifie que la commande n'est pas null
     if (cmd.lenght === 0) return;
-    // Alexa recupere toute les commandes de sont dossier commands/ et les lances si il sont "appelé"
+    /// Alexa recupere toute les commandes de sont dossier commands/ et les lances si il sont "appelé"
     let command = Alexa.commands.get(cmd);
-    // si la commende ne fais pas partie des commandes principales elle va chercher la commande dans les alias
+    /// si la commende ne fais pas partie des commandes principales elle va chercher la commande dans les alias
     if (!command) command = Alexa.commands.get(Alexa.aliases.get(cmd));
-    // lance la commande une fois trouvé
+    /// lance la commande une fois trouvé
     if (command) command.run(Alexa, message, args, prefix, log, admin);
 });
 /* END */
