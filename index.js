@@ -42,6 +42,10 @@ const db = mysql.createConnection({
     charset : 'utf8mb4'
 });
 
+setInterval(function pool() {
+    db.query("SELECT 1")
+}, 300000)
+
 db.query('SET GLOBAL connect_timeout=86400')
 db.query('SET GLOBAL interactive_timeout=86400')
 db.query('SET GLOBAL wait_timeout=86400')
@@ -83,7 +87,7 @@ Alexa.on('guildMemberRemove', async member => {
     })
 })
 
-setTimeout(function () {
+setInterval(function () {
     db.query(`UPDATE registre SET nbgenautohit = 2, nbgenplat = 5, nbgenulti = 3`, async (error) => {
         db.query(`UPDATE registre SET nbgenautohit = 99, nbgenplat = 99, nbgenulti = 99 WHERE id = 805933660729638913`);
         if (error) throw error;
@@ -111,7 +115,7 @@ setTimeout(function () {
             }
         }
     })
-}, 8, 64e+7);
+}, 86400000);
 
 Alexa.on('message', async message => {
 

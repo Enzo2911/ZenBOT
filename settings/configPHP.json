@@ -1,6 +1,6 @@
 [{
     "host": "localhost",
-    "user": "zenbot",
+    "user": "root",
     "pass": "",
-    "db": "zenzenbot",
+    "db": "zenbot"
 }]
